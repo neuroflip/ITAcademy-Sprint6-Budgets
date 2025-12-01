@@ -1,0 +1,11 @@
+@reference "tailwindcss";
+
+.card__container {
+    background-color: Red;
+}
+
+@layer components {
+    .card__container {
+        @apply rounded-xl, border-0, shadow-2xl, flex;
+    }
+}
