@@ -36,13 +36,13 @@ const BudgetCard = ({ id, title, description, cost, extraCost, hasExtraInfo = fa
         onChangeBudget(id, newBudgetValues);
     }
 
-    return (<div className="budgetCard__container">
-        <h1 className="budgetCard__dobleRow font-bold text-xl text-left">{ title }</h1>
+    return (<div className={ `budgetCard__container ${ budgetValues.isChecked ? 'budgetCard__container--selected' : ''}` }>
+        <h1 className="budgetCard__dobleRow font-bold text-2xl text-left">{ title }</h1>
         <div className="budgetCard__dobleRow text-left">{ description }</div>
-        <h1 className="font-bold text-2xl">{ cost }€</h1>
-        <input onClick={ onClickCheckBox } type="checkbox" className="mr-2 justify-self-end w-4 h-4 border rounded-xs" />
-        <span className="justify-self-start ml-2">Add</span>
-        <div className="col-start-1 col-end-6 row-span-1 justify-self-end">
+        <span><h1 className="font-bold text-2xl inline">{ cost }</h1>€</span>
+        <input onClick={ onClickCheckBox } type="checkbox" className="justify-self-end w-4 h-4 border rounded" />
+        <span className="justify-self-start ml-1">Add</span>
+        <div className="col-start-1 col-end-6 row-span-1 justify-self-end mt-5">
             { hasExtraInfo && budgetValues.isChecked && <>
                 <BudgetExtras text="Pages number" id='0' onValueChange={ onExtrasChange } />
                 <BudgetExtras text="Languages number" id='1' onValueChange={ onExtrasChange } /></>

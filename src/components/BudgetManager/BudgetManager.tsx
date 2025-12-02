@@ -30,8 +30,8 @@ const BudgetManager = () => {
                 description={ element.description } cost={ element.cost }
                 extraCost={ baseExtrasCost }></BudgetCard>
         })}
-        <div className="text-right">
-            Budget price: <h1 className="inline ml-1 font-bold">{ totalValue }</h1>€
+        <div className="text-right sm:max-w-11/12 sm:mx-auto">
+            Budget price: <h1 className="inline ml-1 font-bold text-3xl">{ totalValue }</h1>€
         </div>
     </>)
 }
