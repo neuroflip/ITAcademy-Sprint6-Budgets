@@ -1,4 +1,4 @@
-# Sprint 5 Imnage Gallery
+# Sprint 6 Budgets
 
 ## Introduction
 
