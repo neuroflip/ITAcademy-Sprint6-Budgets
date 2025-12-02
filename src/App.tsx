@@ -1,9 +1,10 @@
-import './App.css'
+import './styles/App.css'
+
+import BudgetManager from './components/BudgetManager/BudgetManager'
 
 function App() {
 
-  return (<> App </>
-  )
+  return <BudgetManager />
 }
 
 export default App
