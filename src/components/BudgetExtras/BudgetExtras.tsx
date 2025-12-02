@@ -1,16 +1,13 @@
-import * as React from 'react';
 import type { BudgetExtrasProps } from "./BudgetExtras.types";
 
 import './styles/budgetExtras.css';
 
-const BudgetExtras = ({ id, text, onValueChange }: BudgetExtrasProps) => {
-  const [ value, setValue ] = React.useState<number>(0);
+const BudgetExtras = ({ id, text, value, onChange }: BudgetExtrasProps) => {
   const onClick = (operator: number) => {
     const total = value + operator;
 
-    if (total >= 0) {
-      setValue(total);
-      onValueChange(Number(id), total);
+    if (total >= 1) {
+      onChange(Number(id), total);
     }
   }
 

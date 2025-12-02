@@ -4,7 +4,7 @@ type BudgetCardProps = {
     description: string,
     cost: number,
     extraCost: number,
-    hasExtraInfo?: boolean,
+    hasExtras: boolean,
     onChangeBudget: (id: number, values: BudgetCardValues) => void
 }
 

@@ -2,7 +2,7 @@
 
 @layer base {
     .budgetExtras__button {
-        @apply rounded border-gray-400 border m-1 leading-4 p-0;
+        @apply rounded-full border-gray-400 border m-1 leading-4 p-[0.2rem];
     }
 
     .budgetExtras__value {

@@ -1,0 +1,7 @@
+@reference "tailwindcss";
+
+@layer base {
+    .budget__header {
+        @apply rounded-xl h-32 justify-center flex items-center text-white;
+    }
+}

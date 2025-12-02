@@ -1,0 +1,18 @@
+import { NavLink } from 'react-router';
+import BudgetManager from '../../components/BudgetManager/BudgetManager';
+
+import './styles/budgets.css';
+
+const Budgets = () => {
+    return (<>
+        <header className="budget__header gradientBackground">
+            <h1 className="mainTitle">Get the best quality</h1>
+        </header>
+        <BudgetManager />
+        <div className="mt-10 flex justify-center gap-4">
+            <NavLink to="/" className="bg-white text-gray-900 px-6 py-3 rounded-xl font-semibold shadow-lg hover:bg-gray-100 transition"> Home </NavLink>
+        </div>
+    </>)
+}
+
+export default Budgets;
