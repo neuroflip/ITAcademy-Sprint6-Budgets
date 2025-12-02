@@ -1,0 +1,52 @@
+import * as React from 'react';
+import BudgetExtras from '../BudgetExtras/BudgetExtras';
+import type { BudgetCardProps, BudgetCardValues } from "./BudgetCard.types";
+
+import './styles/budgetCard.css';
+
+const BudgetCard = ({ id, title, description, cost, extraCost, hasExtraInfo = false, onChangeBudget }: BudgetCardProps) => {
+    const [budgetValues, setBudgetValues] = React.useState<BudgetCardValues>({  
+        isChecked: false,
+        cost: 0,
+        extrasCost: 0,
+        extras: [0, 0]
+    });
+
+    const onClickCheckBox = () => {
+        const newBudgetValues = { ...budgetValues }
+        
+        newBudgetValues.isChecked = !newBudgetValues.isChecked;
+        if (newBudgetValues.isChecked) {
+            newBudgetValues.cost = cost;
+        } else {
+            newBudgetValues.cost = 0;
+            newBudgetValues.extras = [0, 0];
+            newBudgetValues.extrasCost = 0;
+        }
+        
+        setBudgetValues(newBudgetValues);
+        onChangeBudget(id, newBudgetValues);
+    }
+
+    const onAdjustValueChange = (extra: number, value: number) => {
+        const newBudgetValues = { ...budgetValues };
+
+        newBudgetValues.extras[extra] = value;
+        newBudgetValues.extrasCost = newBudgetValues.extras.reduce((acc, value) => acc + value) * extraCost;
+        onChangeBudget(id, newBudgetValues);
+    }
+
+    return (<div className="rounded-xl border-0 shadow-lg shadow-black/50 grid grid-cols-5 my-5 p-6 items-center">
+        <h1 className="col-start-1 col-end-3 row-span-1 font-bold text-xl text-left">{ title }</h1>
+        <div className="col-start-1 col-end-3 row-span-1 text-left text-xs">{ description }</div>
+        <h1 className="font-bold text-xl">{ cost }€</h1>
+        <input onClick={ onClickCheckBox } type="checkbox" className="mr-2 justify-self-end w-4 h-4 border border-default-medium rounded-xs bg-neutral-secondary-medium"></input>
+        <span className="justify-self-start ml-2 text-xs">Add</span>
+        { hasExtraInfo && budgetValues.isChecked && <div className="col-start-1 col-end-6 row-span-1 justify-self-end">
+            <BudgetExtras text="Page number" id='0' onValueChange={ onAdjustValueChange } />
+            <BudgetExtras text="Language number" id='1' onValueChange={ onAdjustValueChange } />
+        </div>}
+    </div>)
+}
+
+export default BudgetCard;

@@ -1,0 +1,25 @@
+[{
+    "id": 0,
+    "title": "Web",
+    "description": "Complet responsive web development",
+    "cost": 500,
+    "extraBudget": [{
+        "text": "Page number",
+        "value": 1
+    }, {
+        "text": "Language number",
+        "value": 3
+    }]
+}, {
+    "id": 1,
+    "title": "Seo",
+    "description": "Analisys and Seo optimization",
+    "cost": 300,
+    "extraBudget": []
+}, {
+    "id": 2,
+    "title": "Ads",
+    "description": "Development and ads provider integration",
+    "cost": 400,
+    "extraBudget": []
+}]
