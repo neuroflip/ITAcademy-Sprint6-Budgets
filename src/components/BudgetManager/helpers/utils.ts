@@ -2,6 +2,8 @@
 import type { BudgetCardValues } from "../../BudgetCard/BudgetCard.types";
 import data from '../budget.config.json';
 
+const baseExtrasCost = 30;
+
 const initValues = () => {
     const newValues: Array<BudgetCardValues> = data.map(() => {
         return {
@@ -15,4 +17,4 @@ const initValues = () => {
     return newValues;
 };
 
-export { initValues };
+export { initValues, baseExtrasCost };

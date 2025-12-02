@@ -28,7 +28,7 @@ const BudgetCard = ({ id, title, description, cost, extraCost, hasExtraInfo = fa
         onChangeBudget(id, newBudgetValues);
     }
 
-    const onAdjustValueChange = (extra: number, value: number) => {
+    const onExtrasChange = (extra: number, value: number) => {
         const newBudgetValues = { ...budgetValues };
 
         newBudgetValues.extras[extra] = value;
@@ -36,16 +36,18 @@ const BudgetCard = ({ id, title, description, cost, extraCost, hasExtraInfo = fa
         onChangeBudget(id, newBudgetValues);
     }
 
-    return (<div className="rounded-xl border-0 shadow-lg shadow-black/50 grid grid-cols-5 my-5 p-6 items-center">
-        <h1 className="col-start-1 col-end-3 row-span-1 font-bold text-xl text-left">{ title }</h1>
-        <div className="col-start-1 col-end-3 row-span-1 text-left text-xs">{ description }</div>
-        <h1 className="font-bold text-xl">{ cost }€</h1>
-        <input onClick={ onClickCheckBox } type="checkbox" className="mr-2 justify-self-end w-4 h-4 border border-default-medium rounded-xs bg-neutral-secondary-medium"></input>
-        <span className="justify-self-start ml-2 text-xs">Add</span>
-        { hasExtraInfo && budgetValues.isChecked && <div className="col-start-1 col-end-6 row-span-1 justify-self-end">
-            <BudgetExtras text="Page number" id='0' onValueChange={ onAdjustValueChange } />
-            <BudgetExtras text="Language number" id='1' onValueChange={ onAdjustValueChange } />
-        </div>}
+    return (<div className="budgetCard__container">
+        <h1 className="budgetCard__dobleRow font-bold text-xl text-left">{ title }</h1>
+        <div className="budgetCard__dobleRow text-left">{ description }</div>
+        <h1 className="font-bold text-2xl">{ cost }€</h1>
+        <input onClick={ onClickCheckBox } type="checkbox" className="mr-2 justify-self-end w-4 h-4 border rounded-xs" />
+        <span className="justify-self-start ml-2">Add</span>
+        <div className="col-start-1 col-end-6 row-span-1 justify-self-end">
+            { hasExtraInfo && budgetValues.isChecked && <>
+                <BudgetExtras text="Pages number" id='0' onValueChange={ onExtrasChange } />
+                <BudgetExtras text="Languages number" id='1' onValueChange={ onExtrasChange } /></>
+            }
+        </div>
     </div>)
 }
 

@@ -1,12 +1,11 @@
 
 import * as React from "react";
-
 import type { BudgetCardValues } from "../BudgetCard/BudgetCard.types";
 import BudgetCard from "../BudgetCard/BudgetCard";
-import { initValues } from "./helpers/utils";
+import { initValues, baseExtrasCost } from "./helpers/utils";
 import data from "./budget.config.json";
 
- const baseExtraCost = 30;
+import './styles/budgetManager.css';
 
 const BudgetManager = () => {
     const [totalValue, setTotalValue] = React.useState(0);
@@ -24,7 +23,7 @@ const BudgetManager = () => {
     }
 
     return  (<>
-        <header className={ `rounded-xl  h-32 justify-center flex items-center bg-[url('./src/components/BudgetManager/assets/images/background-header.png')]` }>
+        <header className="budged__header">
             <h1 className="w-80 font-bold text-xl">Get the best quality</h1>
         </header>
         { data.map((element) => {
@@ -32,10 +31,10 @@ const BudgetManager = () => {
                 key={ element.cost } onChangeBudget = { onChangeBudget }
                 id= { element.id } title={ element.title }
                 description={ element.description } cost={ element.cost }
-                extraCost={ baseExtraCost }></BudgetCard>
+                extraCost={ baseExtrasCost }></BudgetCard>
         })}
         <div className="text-right">
-            Budget price: <h1 className="inline ml-1">{ totalValue }</h1>€
+            Budget price: <h1 className="inline ml-1 font-bold">{ totalValue }</h1>€
         </div>
     </>)
 }

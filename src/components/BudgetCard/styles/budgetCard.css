@@ -1,7 +1,11 @@
 @reference "tailwindcss";
 
 @layer base {
-    .card__container {
-        @apply rounded-xl border-0 shadow-lg shadow-black/50 flex m-3 p-4;
+    .budgetCard__container {
+        @apply rounded-xl border-0 shadow-lg shadow-black/50 grid grid-cols-[50%_20%_20%_5%_5%] w-full my-5 p-6 items-center;
+    }
+    
+    .budgetCard__dobleRow {
+        @apply col-start-1 col-end-3 row-span-1;
     }
 }

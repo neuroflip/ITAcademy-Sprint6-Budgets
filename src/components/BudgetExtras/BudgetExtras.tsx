@@ -1,6 +1,8 @@
 import * as React from 'react';
 import type { BudgetExtrasProps } from "./BudgetExtras.types";
 
+import './styles/budgetExtras.css';
+
 const BudgetExtras = ({ id, text, onValueChange }: BudgetExtrasProps) => {
   const [ value, setValue ] = React.useState<number>(0);
   const onClick = (operator: number) => {
@@ -13,10 +15,10 @@ const BudgetExtras = ({ id, text, onValueChange }: BudgetExtrasProps) => {
   }
 
   return (<div className='text-right'>
-    { text }
-    <button className="rounded-full border-gray-400 border m-1 leading-4 p-0" onClick={ () => { onClick(-1) } }>-</button>
-    <input type="text" id={ id } className="border-gray-400 border rounded w-10 text-center text-bold" value={ value } readOnly />
-    <button className="rounded-full border-gray-400 border m-1 leading-4 p-0" onClick={ () => { onClick(1) } }>+</button>
+    <span className="">{ text }</span>
+    <button className="budgetExtras__button" onClick={ () => { onClick(-1) } }>-</button>
+    <input className="budgetExtras__value" type="text" id={ id } value={ value } readOnly />
+    <button className="budgetExtras__button" onClick={ () => { onClick(1) } }>+</button>
   </div>)
 }
 

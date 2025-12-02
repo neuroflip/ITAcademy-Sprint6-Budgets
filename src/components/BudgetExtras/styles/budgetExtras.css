@@ -1,0 +1,11 @@
+@reference "tailwindcss";
+
+@layer base {
+    .budgetExtras__button {
+        @apply rounded border-gray-400 border m-1 leading-4 p-0;
+    }
+
+    .budgetExtras__value {
+        @apply rounded border-gray-400 border m-1 w-10 text-center font-bold;
+    }
+}
