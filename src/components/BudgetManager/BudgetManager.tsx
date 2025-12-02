@@ -23,9 +23,6 @@ const BudgetManager = () => {
     }
 
     return  (<>
-        <header className="budged__header">
-            <h1 className="w-80 font-bold text-xl">Get the best quality</h1>
-        </header>
         { data.map((element) => {
             return <BudgetCard hasExtraInfo={ element.id === 0 }
                 key={ element.cost } onChangeBudget = { onChangeBudget }

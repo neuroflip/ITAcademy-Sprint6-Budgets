@@ -1,7 +1,0 @@
-@reference "tailwindcss";
-
-@layer base {
-    .budged__header {
-        @apply rounded-xl  h-32 justify-center flex items-center bg-[url('./src/components/BudgetManager/assets/images/background-header.png')];
-    }
-}
