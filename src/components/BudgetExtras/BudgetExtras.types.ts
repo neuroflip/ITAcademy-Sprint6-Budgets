@@ -2,7 +2,8 @@
 type BudgetExtrasProps = {
   id: string,
   text: string,
-  onValueChange: (id: number, value: number) => void
+  value: number,
+  onChange: (id: number, value: number) => void
 }
 
 export type { BudgetExtrasProps };
