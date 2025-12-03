@@ -3,8 +3,7 @@ import { validateInput, nameSchema, telephoneSchema, emailSchema, onSubmitValida
 import type { BudgetCreationFormProps } from "./BudgetCreationForm.types";
 import './styles/budgetCreationForm.css';
 
-import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
-import React from 'react';
+import * as React from 'react';
 
 const BudgetCreationForm = ({ onBudgetCreation }: BudgetCreationFormProps) => {
   const { pending } = useFormStatus();
@@ -44,8 +43,7 @@ const BudgetCreationForm = ({ onBudgetCreation }: BudgetCreationFormProps) => {
     }
   }
   
-  return <ErrorBoundary fallback={ <p>There was an error while submitting the request budget</p> }>
-    <div className="my-20 container text-left dropShadow p-10 rounded-xl">
+  return <div className="my-20 container text-left dropShadow p-10 rounded-xl">
       <h1 className="text-left title">Request a budget</h1>
       <form className="my-5 grid grid-cols-1 sm:grid-cols-4 gap-3" action={ submitAction } noValidate>
         <input value={ name } onChange={ validateName } className="row-start-1 sm:row-start-1 w-full sm:w-40 border border-gray-500 rounded mr-3 p-3" type="text" minLength={2} placeholder="Name..." id="name" name="name" />
@@ -57,7 +55,6 @@ const BudgetCreationForm = ({ onBudgetCreation }: BudgetCreationFormProps) => {
         <div className="error__feedback email__feedback col-span-4"></div>
       </form>
     </div>
-  </ErrorBoundary>
 }
 
 export default BudgetCreationForm;
