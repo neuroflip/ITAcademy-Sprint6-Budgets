@@ -1,7 +1,9 @@
 
 import * as React from "react";
 import type { BudgetCardValues } from "../BudgetCard/BudgetCard.types";
+import type { BudgetFormData } from "../BudgetCreationForm/BudgetCreationForm.types"
 import BudgetCard from "../BudgetCard/BudgetCard";
+import BudgetCreationForm from "../BudgetCreationForm/BudgetCreationForm";
 import { initValues, baseExtrasCost, calculateTotalCost, budgetData } from "./helpers/utils";
 
 import './styles/budgetManager.css';
@@ -18,6 +20,10 @@ const BudgetManager = () => {
         setValues(newValues);
     }
 
+    const onBudgetCreation = (data: BudgetFormData) => {
+        console.log(data);
+    }
+
     return  (<>
         { budgetData.map((element) => {
             return <BudgetCard hasExtras={ element.id === 0 }
@@ -26,9 +32,10 @@ const BudgetManager = () => {
                 description={ element.description } cost={ element.cost }
                 extraCost={ baseExtrasCost }></BudgetCard>
         })}
-        <div className="text-right sm:max-w-11/12 sm:mx-auto">
+        <div className="container text-right">
             Budget price: <h1 className="inline ml-1 font-bold text-3xl">{ totalValue }</h1>€
         </div>
+        { totalValue > 0 && <BudgetCreationForm onBudgetCreation={ onBudgetCreation }/> }
     </>)
 }
 

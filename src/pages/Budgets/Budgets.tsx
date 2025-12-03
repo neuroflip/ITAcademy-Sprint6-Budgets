@@ -10,7 +10,7 @@ const Budgets = () => {
         </header>
         <BudgetManager />
         <div className="mt-10 flex justify-center gap-4">
-            <NavLink to="/" className="bg-white text-gray-900 px-6 py-3 rounded-xl font-semibold shadow-lg hover:bg-gray-100 transition"> Home </NavLink>
+            <NavLink to="/" className="button"> Home </NavLink>
         </div>
     </>)
 }

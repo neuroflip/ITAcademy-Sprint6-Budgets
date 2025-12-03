@@ -25,7 +25,7 @@ const BudgetCard = ({ id, title, description, cost, extraCost, hasExtras = false
         onChangeBudget(id, newBudgetValues);
     }
 
-    return (<div className={ `budgetCard__container ${ budgetValues.isChecked ? 'budgetCard__container--selected' : ''}` }>
+    return (<div className={ `budgetCard__container container ${ budgetValues.isChecked ? 'budgetCard__container--selected' : ''}` }>
         <h1 className="budgetCard__dobleRow title text-left">{ title }</h1>
         <div className="budgetCard__dobleRow text-left">{ description }</div>
         <span><h1 className="title inline">{ cost }</h1>€</span>
