@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router';
-import BudgetManager from '../../components/BudgetManager/BudgetManager';
+import BudgetManager from '../../components/BudgetManager/BudgetsManager';
 import ErrorBoundary from '../../components/ErrorBoundary/ErrorBoundary';
 
 import './styles/budgets.css';

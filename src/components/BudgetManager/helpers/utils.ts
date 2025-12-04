@@ -1,24 +1,32 @@
     
-import type { BudgetCardValues } from "../../BudgetCard/BudgetCard.types";
+import type { BudgetServiceForCard, Extra } from "../../BudgetServiceCard/BudgetServiceCard.types";
 import budgetData from '../budget.config.json';
 
 const baseExtrasCost = 30;
 
 const initValues = () => {
-    const newValues: Array<BudgetCardValues> = budgetData.map(() => {
-        return {
+    const newValues: Array<BudgetServiceForCard> = [];
+
+    for(const budget of budgetData) {
+        newValues.push({
+            id: budget.id,
             isChecked: false,
-            cost: 0,
-            extras: [0, 0],
-            extrasCost: 0
-        }
-    });
+            title: budget.title,
+            description: budget.description,
+            cost: budget.cost,
+            extras: budget.extras
+        });
+    }
 
     return newValues;
 };
 
-const calculateTotalCost = (values: Array<BudgetCardValues>) => {
-    return values.reduce((acc, element) => acc + element.cost + element.extrasCost, 0);
+const calculateTotalCost = (values: Array<BudgetServiceForCard>) => {
+    return values.reduce((acc: number, element: BudgetServiceForCard) => {
+            const extrasCost = element.extras ? element.extras.reduce((acc: number, extra: Extra) => acc + extra.value, 0) : 0;
+
+            return element.isChecked ? acc + element.cost + extrasCost * baseExtrasCost : acc;
+        }, 0);
 };
 
 export { initValues, baseExtrasCost, calculateTotalCost, budgetData };

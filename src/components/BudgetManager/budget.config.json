@@ -2,11 +2,14 @@
     "id": 0,
     "title": "Web",
     "description": "Complet responsive web development",
+    "isChecked": false,
     "cost": 500,
-    "extraBudget": [{
+    "extras": [{
+        "id": 0,
         "text": "Page number",
         "value": 1
     }, {
+        "id": 1,
         "text": "Language number",
         "value": 3
     }]
@@ -14,12 +17,14 @@
     "id": 1,
     "title": "Seo",
     "description": "Analisys and Seo optimization",
+    "isChecked": false,
     "cost": 300,
-    "extraBudget": []
+    "extras": null
 }, {
     "id": 2,
     "title": "Ads",
     "description": "Development and ads provider integration",
+    "isChecked": false,
     "cost": 400,
-    "extraBudget": []
+    "extras": null
 }]
