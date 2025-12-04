@@ -11,6 +11,7 @@ type BudgetData = {
   name: string,
   telephone: string,
   email: string,
+  totalCost: number,
   budgets: Array<BudgetService>
 }
 

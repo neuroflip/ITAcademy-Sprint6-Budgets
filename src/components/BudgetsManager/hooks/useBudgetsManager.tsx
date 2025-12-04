@@ -21,7 +21,7 @@ const useBudgetsManager = (): [Array<BudgetServiceForCard>, number, (budget: Bud
     }
 
     const onBudgetCreation = (data: BudgetFormData) => {
-        const budgetData: BudgetData = { ...data, budgets };
+        const budgetData: BudgetData = { ...data, budgets, totalCost: totalValue };
 
         dataManager.saveBudget(budgetData);
     }

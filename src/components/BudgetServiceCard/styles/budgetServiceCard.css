@@ -1,13 +1,7 @@
 @reference "tailwindcss";
 
 @layer base {
-    .budgetCard__container {
-        @apply rounded-xl border-0 shadow-lg shadow-black/50;
-        @apply grid grid-cols-[30%_30%_30%_5%_5%] sm:grid-cols-[50%_20%_20%_5%_5%];
-        @apply my-15 p-8 sm:p-10 items-center;
-    }
-
-    .budgetCard__container--selected {
+    .card__container--selected {
         @apply border-blue-500 border-3;
     }
     

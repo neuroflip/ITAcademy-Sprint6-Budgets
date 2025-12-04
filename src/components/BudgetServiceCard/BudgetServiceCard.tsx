@@ -7,7 +7,7 @@ import './styles/budgetServiceCard.css';
 const BudgetServiceCard = ({ budget, onChangeBudget }: BudgetServiceCardProps) => {
     const [onClickCheckBox, onChangeExtras] = useBudgetServiceCard(budget, onChangeBudget);
 
-    return (<div className={ `budgetCard__container container ${ budget.isChecked ? 'budgetCard__container--selected' : ''}` }>
+    return (<div className={ `card__container container ${ budget.isChecked ? 'card__container--selected' : ''}` }>
         <h1 className="budgetCard__dobleRow title text-left">{ budget.title }</h1>
         <div className="budgetCard__dobleRow text-left">{ budget.description }</div>
         <span><h1 className="title inline">{ budget.cost }</h1>€</span>
