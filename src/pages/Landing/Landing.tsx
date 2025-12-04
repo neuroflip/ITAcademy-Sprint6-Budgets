@@ -14,7 +14,7 @@ const Landing = () => {
       </p>
 
       <div className="mt-10 flex justify-center gap-4">
-        <NavLink to="/budgets" className="bg-white text-gray-900 px-6 py-3 rounded-xl font-semibold shadow-lg hover:bg-gray-100 transition"> Get My Quote Now </NavLink>
+        <NavLink to="/budgets" className="button"> Get My Quote Now </NavLink>
     </div>
     </div>
   </section>

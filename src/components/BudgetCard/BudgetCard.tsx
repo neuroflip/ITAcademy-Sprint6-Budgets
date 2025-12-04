@@ -1,31 +1,13 @@
-import * as React from 'react';
 import BudgetExtras from '../BudgetExtras/BudgetExtras';
-import { getBudgetValues, getBudgetInitialValues } from './helpers/utils';
-import type { BudgetCardProps, BudgetCardValues } from "./BudgetCard.types";
+import useBudgetCard from './hooks/useBudgetCard';
+import type { BudgetCardProps } from "./BudgetCard.types";
 
 import './styles/budgetCard.css';
 
 const BudgetCard = ({ id, title, description, cost, extraCost, hasExtras = false, onChangeBudget }: BudgetCardProps) => {
-    const [budgetValues, setBudgetValues] = React.useState<BudgetCardValues>(getBudgetInitialValues());
+    const [budgetValues, onClickCheckBox, onChangeExtras] = useBudgetCard(id, cost, extraCost, hasExtras, onChangeBudget);
 
-    const onClickCheckBox = () => {
-        const newBudgetValues = { ...budgetValues }
-
-        newBudgetValues.isChecked = !newBudgetValues.isChecked;
-        getBudgetValues(newBudgetValues, hasExtras, cost, extraCost);        
-        setBudgetValues(newBudgetValues);
-        onChangeBudget(id, newBudgetValues);
-    }
-
-    const onChangeExtras = (extra: number, value: number) => {
-        const newBudgetValues = { ...budgetValues };
-
-        newBudgetValues.extras[extra] = value;
-        newBudgetValues.extrasCost = newBudgetValues.extras.reduce((acc, value) => acc + value) * extraCost;
-        onChangeBudget(id, newBudgetValues);
-    }
-
-    return (<div className={ `budgetCard__container ${ budgetValues.isChecked ? 'budgetCard__container--selected' : ''}` }>
+    return (<div className={ `budgetCard__container container ${ budgetValues.isChecked ? 'budgetCard__container--selected' : ''}` }>
         <h1 className="budgetCard__dobleRow title text-left">{ title }</h1>
         <div className="budgetCard__dobleRow text-left">{ description }</div>
         <span><h1 className="title inline">{ cost }</h1>€</span>

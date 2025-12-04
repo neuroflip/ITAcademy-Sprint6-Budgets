@@ -1,23 +1,13 @@
 
-import * as React from "react";
-import type { BudgetCardValues } from "../BudgetCard/BudgetCard.types";
 import BudgetCard from "../BudgetCard/BudgetCard";
-import { initValues, baseExtrasCost, calculateTotalCost, budgetData } from "./helpers/utils";
+import BudgetCreationForm from "../BudgetCreationForm/BudgetCreationForm";
+import { baseExtrasCost, budgetData } from "./helpers/utils";
+import useBudgetManager from "./hooks/useBudgetManager";
 
 import './styles/budgetManager.css';
 
 const BudgetManager = () => {
-    const [totalValue, setTotalValue] = React.useState(0);
-    const [ values, setValues ] = React.useState<Array<BudgetCardValues>>(initValues());
-
-    const onChangeBudget = (id: number, cardValues: BudgetCardValues) => {
-        const newValues = [...values];
-
-        newValues[id] = cardValues;
-        setTotalValue(calculateTotalCost(newValues));
-        setValues(newValues);
-    }
-
+    const [totalValue, onChangeBudget, onBudgetCreation] = useBudgetManager();
     return  (<>
         { budgetData.map((element) => {
             return <BudgetCard hasExtras={ element.id === 0 }
@@ -26,9 +16,10 @@ const BudgetManager = () => {
                 description={ element.description } cost={ element.cost }
                 extraCost={ baseExtrasCost }></BudgetCard>
         })}
-        <div className="text-right sm:max-w-11/12 sm:mx-auto">
+        <div className="container text-right">
             Budget price: <h1 className="inline ml-1 font-bold text-3xl">{ totalValue }</h1>€
         </div>
+        { totalValue > 0 && <BudgetCreationForm onBudgetCreation={ onBudgetCreation }/> }
     </>)
 }
 
