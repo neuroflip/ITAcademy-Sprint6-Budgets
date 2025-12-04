@@ -3,7 +3,7 @@ import BudgetServiceCard from "../BudgetServiceCard/BudgetServiceCard";
 import BudgetCreationForm from "../BudgetCreationForm/BudgetCreationForm";
 import useBudgetManager from "./hooks/useBudgetsManager";
 
-import './styles/budgetManager.css';
+import './styles/budgetsManager.css';
 
 const BudgetsManager = () => {
     const [budgets, totalValue, onChangeBudget, onBudgetCreation] = useBudgetManager();

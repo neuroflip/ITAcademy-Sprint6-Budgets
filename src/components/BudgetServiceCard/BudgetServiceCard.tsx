@@ -2,7 +2,7 @@ import BudgetServiceExtras from '../BudgetServiceExtras/BudgetServiceExtras';
 import useBudgetServiceCard from './hooks/useBudgetServiceCard';
 import type { BudgetServiceCardProps } from "./BudgetServiceCard.types";
 
-import './styles/budgetCard.css';
+import './styles/budgetServiceCard.css';
 
 const BudgetServiceCard = ({ budget, onChangeBudget }: BudgetServiceCardProps) => {
     const [onClickCheckBox, onChangeExtras] = useBudgetServiceCard(budget, onChangeBudget);
