@@ -1,8 +1,8 @@
-import type { BudgetExtrasProps } from "./BudgetExtras.types";
+import type { BudgetServiceExtrasProps } from "./BudgetServiceExtras.types";
 
-import './styles/budgetExtras.css';
+import './styles/budgetServiceExtras.css';
 
-const BudgetExtras = ({ id, text, value, onChange }: BudgetExtrasProps) => {
+const BudgetExtras = ({ id, text, value, onChange }: BudgetServiceExtrasProps) => {
   const onClick = (operator: number) => {
     const total = value + operator;
 

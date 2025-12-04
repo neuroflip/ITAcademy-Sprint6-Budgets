@@ -1,10 +1,17 @@
-import type { BudgetCardValues } from "../components/BudgetCard/BudgetCard.types";
+import type { Extra } from "../components/BudgetServiceCard/BudgetServiceCard.types";
+
+interface BudgetService {
+  id: number,
+  cost: number,
+  extras: Array<Extra> | null
+}
 
 type BudgetData = {
+  id?: number,
   name: string,
   telephone: string,
   email: string,
-  data: Array<BudgetCardValues>
+  budgets: Array<BudgetService>
 }
 
 interface BudgetDataProvider {
@@ -12,4 +19,4 @@ interface BudgetDataProvider {
   saveBudget: (data: BudgetData) => void
 }
 
-export type { BudgetData, BudgetDataProvider };
+export type { BudgetService, BudgetData, BudgetDataProvider };
