@@ -7,17 +7,18 @@ import BudgetstList from "../BudgetstList/BudgetstList";
 import './styles/budgetsManager.css';
 
 const BudgetsManager = () => {
-    const [budgets, totalValue, onChangeBudget, onBudgetCreation] = useBudgetManager();
+    const [budgetServices, totalValue, onChangeBudget, onBudgetCreation] = useBudgetManager();
     return  (<>
-        { budgets.map((budget) => {
-            return <BudgetServiceCard key = { budget.cost }
+        { budgetServices.map((budgetService) => {
+            return <BudgetServiceCard key = { budgetService.cost }
                 onChangeBudget = { onChangeBudget }
-                budget={ budget } />
+                budget={ budgetService } />
         })}
         <div className="container text-right">
             Budget price: <h1 className="inline ml-1 font-bold text-3xl">{ totalValue }</h1>€
         </div>
         { totalValue > 0 && <BudgetCreationForm onBudgetCreation={ onBudgetCreation }/> }
+        
         <BudgetstList />
     </>)
 }

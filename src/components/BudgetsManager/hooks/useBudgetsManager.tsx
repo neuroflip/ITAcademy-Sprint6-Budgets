@@ -8,25 +8,30 @@ import type { BudgetData } from '../../../BudgetDataManager/BudgetDataManager.ty
 
 const useBudgetsManager = (): [Array<BudgetServiceForCard>, number, (budget: BudgetServiceForCard) => void,
       (data: BudgetFormData) => void] => {
-    const [ budgets, setBudgets ] = React.useState<Array<BudgetServiceForCard>>(initValues());
-    const [totalValue, setTotalValue] = React.useState(calculateTotalCost(budgets));
+    const [ budgetServices, setBudgetServices ] = React.useState<Array<BudgetServiceForCard>>(initValues());
+    const [totalValue, setTotalValue] = React.useState(calculateTotalCost(budgetServices));
     const dataManager = new BudgetDataManager(new LocalStorageProvider());
 
-    const onChangeBudget = (budget: BudgetServiceForCard) => {
-        const newValues = [...budgets];
+    const onChangeBudget = (budgetService: BudgetServiceForCard) => {
+        const newValues = [...budgetServices];
 
-        newValues[budget.id] =  budget;
+        newValues[budgetService.id] =  budgetService;
         setTotalValue(calculateTotalCost(newValues));
-        setBudgets(newValues);
+        setBudgetServices(newValues);
     }
 
     const onBudgetCreation = (data: BudgetFormData) => {
-        const budgetData: BudgetData = { ...data, budgets, totalCost: totalValue };
+        const budgetData: BudgetData = { 
+            date: new Date().toISOString(),
+            ...data,
+            services: budgetServices,
+            totalCost: totalValue 
+        };
 
         dataManager.saveBudget(budgetData);
     }
 
-    return [budgets, totalValue, onChangeBudget, onBudgetCreation];
+    return [budgetServices, totalValue, onChangeBudget, onBudgetCreation];
 }
 
 export default useBudgetsManager;

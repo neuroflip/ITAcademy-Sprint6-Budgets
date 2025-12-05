@@ -9,7 +9,7 @@ const BudgetServiceCard = ({ budget, onChangeBudget }: BudgetServiceCardProps) =
 
     return (<div className={ `card__container container ${ budget.isChecked ? 'card__container--selected' : ''}` }>
         <h1 className="budgetCard__dobleRow title text-left">{ budget.title }</h1>
-        <div className="budgetCard__dobleRow text-left">{ budget.description }</div>
+        <div className="budgetCard__dobleRow text-left font-bold">{ budget.description }</div>
         <span><h1 className="title inline">{ budget.cost }</h1>€</span>
         <input onClick={ onClickCheckBox } type="checkbox" className="justify-self-end w-4 h-4 border rounded" />
         <span className="justify-self-start ml-1">Add</span>

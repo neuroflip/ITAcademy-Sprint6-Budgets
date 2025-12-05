@@ -7,14 +7,14 @@ const baseExtrasCost = 30;
 const initValues = () => {
     const newValues: Array<BudgetServiceForCard> = [];
 
-    for(const budget of budgetData) {
+    for(const budgetService of budgetData) {
         newValues.push({
-            id: budget.id,
+            id: budgetService.id,
             isChecked: false,
-            title: budget.title,
-            description: budget.description,
-            cost: budget.cost,
-            extras: budget.extras
+            title: budgetService.title,
+            description: budgetService.description,
+            cost: budgetService.cost,
+            extras: budgetService.extras
         });
     }
 

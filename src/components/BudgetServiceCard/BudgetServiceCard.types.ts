@@ -7,6 +7,7 @@ type BudgetServiceCardProps = {
 
 type Extra = {
   id: number,
+  text: string,
   value: number
 }
 

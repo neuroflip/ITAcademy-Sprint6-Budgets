@@ -2,7 +2,6 @@ import type { BudgetService } from "../BudgetServiceCard.types";
 
 const getBudgetValues = (budget: BudgetService, isChecked: boolean, hasExtras: boolean, cost: number) => {
   if (isChecked) {
-      budget.id = 
       budget.cost = cost;
       budget.extras = hasExtras ? [] : null;
   } else {

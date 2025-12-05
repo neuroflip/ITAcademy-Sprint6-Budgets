@@ -7,7 +7,19 @@ const BudgetstListCard = ({ budget }: BudgetListItemProps) => {
         <div>{ budget.email }</div>
         <div>{ budget.telephone }</div>
       </div>
-      <h2 className="flex-1 font-bold">Contracted services:</h2>
+      <div>
+        <h2 className="flex-1 font-bold text-left">Contracted services:</h2>
+        <ul className="text-left">
+          { budget.services.map((service) => 
+            <li className="list-disc ml-4">
+              { service.title } ({ service.extras && 
+                service.extras.map((extra, index) => <>
+                  { index > 0 ? ', ' : '' }
+                  { extra.text }: { extra.value }
+                </>) })
+            </li>) }
+        </ul>
+      </div>
       <div className="flex-1">
         <div>Total:</div>
         <span className="title">{ budget.totalCost }</span>€
