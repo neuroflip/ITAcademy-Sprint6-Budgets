@@ -2,7 +2,8 @@ import type { BudgetService } from "../../BudgetDataManager/BudgetDataManager.ty
 
 type BudgetServiceCardProps = {
   budget: BudgetServiceForCard,
-  onChangeBudget: (budget: BudgetServiceForCard) => void
+  onChangeBudget: (budget: BudgetServiceForCard) => void,
+  discount: number
 }
 
 type Extra = {

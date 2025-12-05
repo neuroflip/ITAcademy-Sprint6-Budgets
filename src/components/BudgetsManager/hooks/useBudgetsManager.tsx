@@ -6,17 +6,23 @@ import LocalStorageProvider from '../../../BudgetDataManager/providers/LocalStor
 import type { BudgetFormData } from '../../BudgetCreationForm/BudgetCreationForm.types';
 import type { BudgetData } from '../../../BudgetDataManager/BudgetDataManager.types';
 
-const useBudgetsManager = (): [Array<BudgetServiceForCard>, number, (budget: BudgetServiceForCard) => void,
-      (data: BudgetFormData) => void] => {
+const useBudgetsManager = (): [Array<BudgetServiceForCard>, number, boolean, (budget: BudgetServiceForCard) => void,
+      (data: BudgetFormData) => void, () => void] => {
     const [ budgetServices, setBudgetServices ] = React.useState<Array<BudgetServiceForCard>>(initValues());
-    const [totalValue, setTotalValue] = React.useState(calculateTotalCost(budgetServices));
+    const [ isSwitchOn, setIsSwitchOn ] = React.useState(false);
+    const [totalValue, setTotalValue] = React.useState(calculateTotalCost(budgetServices, isSwitchOn ? 0.2 : 0));
     const dataManager = new BudgetDataManager(new LocalStorageProvider());
+
+    const onSwitch = () => {
+        setTotalValue(calculateTotalCost(budgetServices, !isSwitchOn ? 0.2 : 0));
+        setIsSwitchOn(!isSwitchOn);
+    }
 
     const onChangeBudget = (budgetService: BudgetServiceForCard) => {
         const newValues = [...budgetServices];
 
         newValues[budgetService.id] =  budgetService;
-        setTotalValue(calculateTotalCost(newValues));
+        setTotalValue(calculateTotalCost(newValues, isSwitchOn ? 0.2 : 0));
         setBudgetServices(newValues);
     }
 
@@ -31,7 +37,7 @@ const useBudgetsManager = (): [Array<BudgetServiceForCard>, number, (budget: Bud
         dataManager.saveBudget(budgetData);
     }
 
-    return [budgetServices, totalValue, onChangeBudget, onBudgetCreation];
+    return [budgetServices, totalValue, isSwitchOn, onChangeBudget, onBudgetCreation, onSwitch];
 }
 
 export default useBudgetsManager;

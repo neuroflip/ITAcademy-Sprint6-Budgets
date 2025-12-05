@@ -21,12 +21,14 @@ const initValues = () => {
     return newValues;
 };
 
-const calculateTotalCost = (values: Array<BudgetServiceForCard>) => {
-    return values.reduce((acc: number, element: BudgetServiceForCard) => {
+const calculateTotalCost = (values: Array<BudgetServiceForCard>, discount: number) => {
+    const price = values.reduce((acc: number, element: BudgetServiceForCard) => {
             const extrasCost = element.extras ? element.extras.reduce((acc: number, extra: Extra) => acc + extra.value, 0) : 0;
 
             return element.isChecked ? acc + element.cost + extrasCost * baseExtrasCost : acc;
         }, 0);
+
+    return price - (price * discount);
 };
 
 export { initValues, baseExtrasCost, calculateTotalCost, budgetData };
