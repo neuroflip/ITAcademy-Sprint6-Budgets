@@ -1,8 +1,8 @@
 
 type BudgetListOrderProps = {
-  onOrderClick: (order: OrderIntex) => void
+  onOrderClick: (order: OrderIndex) => void
 }
 
-type OrderIntex = "date" | "name" | "totalCost";
+type OrderIndex = "date" | "name" | "totalCost";
 
-export type { BudgetListOrderProps, OrderIntex }
+export type { BudgetListOrderProps, OrderIndex }

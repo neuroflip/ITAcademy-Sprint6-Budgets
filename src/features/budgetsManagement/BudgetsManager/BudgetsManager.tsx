@@ -7,16 +7,16 @@ import BudgetstList from "../../budgetsListing/BudgetstList/BudgetstList";
 import './styles/budgetsManager.css';
 
 const BudgetsManager = () => {
-    const [budgetServices, totalValue, isSwitchOn, onChangeBudget, onBudgetCreation, onSwitch] = useBudgetManager();
+    const [ budgetServices, totalBudgets, calculatedTotalCost, isSwitchOn, onChangeBudget, onBudgetCreation, onSwitch ] = useBudgetManager();
 
     return  (<div className="mt-10">
         <div className="leading-8">
-            monthly payment
+            Monthly payment
             <label className="switch mx-5">
                 <input id="annualSwitch" type="checkbox" onChange= { onSwitch } checked={ isSwitchOn } />
                 <span className="slider round"></span>
             </label>
-            annual payment
+            Annual payment
         </div>
         { budgetServices.map((budgetService) => {
             return <BudgetServiceCard key={ budgetService.cost }
@@ -25,11 +25,11 @@ const BudgetsManager = () => {
                 budget={ budgetService } />
         })}
         <div className="container text-right">
-            Budget price: <h1 className="inline ml-1 font-bold text-3xl">{ totalValue }</h1>€
+            Budget price: <h1 className="inline ml-1 font-bold text-3xl">{ calculatedTotalCost }</h1>€
         </div>
-        { totalValue > 0 && <BudgetCreationForm onBudgetCreation={ onBudgetCreation }/> }
+        { calculatedTotalCost > 0 && <BudgetCreationForm onBudgetCreation={ onBudgetCreation }/> }
 
-        <BudgetstList />
+        <BudgetstList initialBudgets={ totalBudgets }/>
     </div>)
 }
 

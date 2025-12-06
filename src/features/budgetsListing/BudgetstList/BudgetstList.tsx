@@ -4,10 +4,10 @@ import BudgetListFilter from "./BudgetListFilter/BudgetListFilter";
 import useBudgetsList from "./hooks/useBudgetsList";
 
 import type { BudgetData } from "../../../BudgetDataManager/BudgetDataManager.types";
+import type { BudgetsListProps } from "./BudgetsList.types";
 
-
-const BudgetstList = () => {
-  const [budgets, onOrderClick, onFilterChange] = useBudgetsList();
+const BudgetstList = ({ initialBudgets }: BudgetsListProps) => {
+  const [ budgets, onOrderClick, onFilterChange ] = useBudgetsList(initialBudgets);
 
   return (<div className="container border-t-4 border-gray-400 border-dashed mt-26 pt-20">
     <h1 className="title text-left mb-5">Ongoing budgets:</h1>
@@ -15,7 +15,7 @@ const BudgetstList = () => {
       <BudgetListFilter onFilterChange={ onFilterChange } />
       <BudgetListOrder onOrderClick = { onOrderClick } />
     </div>
-    { budgets.map((data: BudgetData) => <BudgetstListCard key={ `${data.name}` } budget={ data } />) }
+    { budgets.map((data: BudgetData) => <BudgetstListCard key={ `${data.date}` } budget={ data } />) }
   </div>);
 }
 

@@ -1,15 +1,11 @@
 import * as React from "react";
-import BudgetDataManager from "../../../../BudgetDataManager/BudgetDataManager";
-import LocalStorageProvider from "../../../../BudgetDataManager/providers/LocalStorageProvider";
 
 import type { BudgetData } from "../../../../BudgetDataManager/BudgetDataManager.types";
-import type { OrderIntex } from "../BudgetListOrder/BudgetListOrder.types";
+import type { OrderIndex } from "../BudgetListOrder/BudgetListOrder.types";
 
-const useBudgetsList = (): [Array<BudgetData>, (order: OrderIntex) => void, (value: string) => void] => {
-  const dataManager = new BudgetDataManager(new LocalStorageProvider());
-  const [ totalBudgets ] = React.useState<Array<BudgetData>>(dataManager.getBudgets());
+const useBudgetsList = (totalBudgets: Array<BudgetData>): [ Array<BudgetData>, (order: OrderIndex) => void, (value: string) => void ] => {
   const [ budgets, setBudgets ] = React.useState<Array<BudgetData>>(totalBudgets);
-  const onOrderClick = (order: OrderIntex) => {
+  const onOrderClick = (order: OrderIndex) => {
     const newBudgets = [ ...budgets ];
     
     newBudgets.sort((a, b) => {
@@ -23,7 +19,11 @@ const useBudgetsList = (): [Array<BudgetData>, (order: OrderIntex) => void, (val
     setBudgets(newBudgets);
   }
 
-  return [budgets, onOrderClick, onFilterChange];
+  React.useEffect(() => {
+    setBudgets(totalBudgets);
+  }, [totalBudgets]);
+
+  return [ budgets, onOrderClick, onFilterChange ];
 }
 
 export default useBudgetsList;

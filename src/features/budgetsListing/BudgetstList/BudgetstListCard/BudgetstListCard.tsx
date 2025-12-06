@@ -2,16 +2,16 @@ import type { BudgetListItemProps } from "./BudgetstListCard.types";
 
 const BudgetstListCard = ({ budget }: BudgetListItemProps) => {
   return (<div className="card__container container flex w-full m-auto">
-      <div className="flex-1 text-left">
-        <h1 className="title">{ budget.name }</h1>
-        <div>{ budget.email }</div>
-        <div>{ budget.telephone }</div>
+      <div className="flex-1 text-left max-w-[25%]">
+        <h1 className="title truncate">{ budget.name }</h1>
+        <div className="text-gray-500 truncate">{ budget.email }</div>
+        <div className="text-gray-500 truncate">{ budget.telephone }</div>
       </div>
-      <div>
-        <h2 className="flex-1 font-bold text-left">Contracted services:</h2>
+      <div className="flex-2">
+        <h2 className="font-bold text-left">Contracted services:</h2>
         <ul className="text-left">
           { budget.services.map((service) => 
-            <li key={ service.title } className="list-disc ml-4">
+            <li key={ service.title } className="list-disc ml-4 font-bold">
               { service.title } { service.extras && 
                 service.extras.map((extra, index) => <span key={ extra.text }>
                   { index > 0 ? ', ' : '(' }
@@ -22,7 +22,7 @@ const BudgetstListCard = ({ budget }: BudgetListItemProps) => {
         </ul>
       </div>
       <div className="flex-1">
-        <div>Total:</div>
+        <div className="text-gray-500 font-bold">Total:</div>
         <span className="title">{ budget.totalCost }</span>€
       </div>
   </div>)

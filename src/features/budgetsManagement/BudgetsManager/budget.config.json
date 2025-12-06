@@ -1,29 +1,29 @@
 [{
     "id": 0,
     "title": "Web",
-    "description": "Complet responsive web development",
+    "description": "Development of a complet responsive web development",
     "isChecked": false,
     "cost": 500,
     "extras": [{
         "id": 0,
-        "text": "Page number",
+        "text": "Pages number",
         "value": 1
     }, {
         "id": 1,
-        "text": "Language number",
+        "text": "Languages number",
         "value": 3
     }]
 }, {
     "id": 1,
     "title": "Seo",
-    "description": "Analisys and Seo optimization",
+    "description": "Development, analisys and Seo optimization of a complete website",
     "isChecked": false,
     "cost": 300,
     "extras": null
 }, {
     "id": 2,
     "title": "Ads",
-    "description": "Development and ads provider integration",
+    "description": "Development and ads provider integration in a website",
     "isChecked": false,
     "cost": 400,
     "extras": null

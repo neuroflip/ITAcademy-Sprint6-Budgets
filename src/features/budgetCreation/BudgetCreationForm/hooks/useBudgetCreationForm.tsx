@@ -40,6 +40,9 @@ const useBudgetCreationForm = (onBudgetCreation: (data: BudgetFormData) => void)
         telephone: String(formData.get('telephone')) || '',
         email: String(formData.get('email')) || '',
       });
+      setName('');
+      setEmail('');
+      setTelephone('');
     }
   }
 

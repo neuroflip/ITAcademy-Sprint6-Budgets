@@ -6,6 +6,6 @@
     }
     
     .budgetCard__dobleRow {
-        @apply col-start-1 col-end-3 row-span-1;
+        @apply col-start-1 col-end-3 row-span-1 text-gray-700;
     }
 }
