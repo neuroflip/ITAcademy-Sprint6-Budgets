@@ -1,0 +1,16 @@
+@reference "tailwindcss";
+
+.budgetForm input.invalid, .budgetForm input.invalid:focus {
+  @apply border-red-600 border;
+  @apply outline-0;
+}
+
+.budgetForm input.valid, .budgetForm input.valid:focus {
+  @apply border-green-600;
+  @apply outline-0;
+}
+
+.error__feedback {
+  @apply whitespace-pre-line text-red-600;
+}
+

@@ -1,0 +1,11 @@
+@reference "tailwindcss";
+
+@layer base {
+    .card__container--selected {
+        @apply border-blue-500 border-3;
+    }
+    
+    .budgetCard__dobleRow {
+        @apply col-start-1 col-end-3 row-span-1 text-gray-700;
+    }
+}

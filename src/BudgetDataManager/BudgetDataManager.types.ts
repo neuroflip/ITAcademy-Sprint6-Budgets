@@ -1,4 +1,4 @@
-import type { Extra } from "../components/BudgetServiceCard/BudgetServiceCard.types";
+import type { BudgetServiceForCard, Extra } from "../features/budgetsListing/BudgetServiceCard/BudgetServiceCard.types";
 
 interface BudgetService {
   id: number,
@@ -7,11 +7,12 @@ interface BudgetService {
 }
 
 type BudgetData = {
-  id?: number,
+  date: string,
   name: string,
   telephone: string,
   email: string,
-  budgets: Array<BudgetService>
+  totalCost: number,
+  services: Array<BudgetServiceForCard>
 }
 
 interface BudgetDataProvider {

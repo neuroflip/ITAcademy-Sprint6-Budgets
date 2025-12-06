@@ -1,11 +1,12 @@
 import { NavLink } from 'react-router';
-import BudgetsManager from '../../components/BudgetsManager/BudgetsManager';
+import BudgetsManager from '../../features/budgetsManagement/BudgetsManager/BudgetsManager';
 import ErrorBoundary from '../../components/ErrorBoundary/ErrorBoundary';
+import ModalInfo from '../../components/ModalInfo/ModalInfo';
 
 import './styles/budgets.css';
 
 const Budgets = () => {
-    return (<ErrorBoundary fallback={ <p>There was an error, please try again</p> }>
+    return (<ErrorBoundary fallback={ <ModalInfo isOpen={ true } onClose={() => { }} message="There is a problem rendering the App. Please reload and try again." /> }>
         <header className="budget__header gradientBackground">
             <h1 className="mainTitle">Get the best quality</h1>
         </header>
