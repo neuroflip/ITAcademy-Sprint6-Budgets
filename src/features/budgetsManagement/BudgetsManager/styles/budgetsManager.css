@@ -1,40 +1,36 @@
 @reference "tailwindcss";
 
 @layer base {
-.switch {
-  @apply relative inline-block w-[60px] h-[34px];
-}
+  .switch {
+    @apply relative inline-block w-[60px] h-[34px];
+  }
 
-.switch input {
-  @apply opacity-0 w-0 h-0;
-}
+  .switch input {
+    @apply opacity-0 w-0 h-0;
+  }
 
-.slider {
-  @apply absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-gray-500 duration-15;
-}
+  .slider {
+    @apply absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-gray-500 duration-15;
+  }
 
-.slider:before {
-  @apply absolute content-[""] h-[26px] w-[26px] l-1 bottom-1 bg-white duration-15;
-}
+  .slider:before {
+    @apply absolute content-[""] h-[26px] w-[26px] left-1 bottom-1 bg-white duration-15;
+  }
 
-input:checked + .slider {
-  @apply bg-blue-500;
-}
+  input:checked + .slider {
+    @apply bg-blue-500;
+  }
 
-input:focus + .slider {
-  @apply shadow-blue-400 shadow-sm;
-}
+  input:focus + .slider {
+    @apply shadow-blue-400 shadow-sm;
+  }
 
-input:checked + .slider:before {
-  @apply translate-7;
-}
+  input:checked + .slider:before {
+    @apply translate-x-7;
+  }
 
-.slider.round {
-  @apply border-8;
-}
-
-.slider.round:before {
-  @apply border-8;
-}
+  .slider.round, .slider.round:before {
+    @apply rounded-full;
+  }
 }
 
