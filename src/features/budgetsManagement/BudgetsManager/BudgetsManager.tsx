@@ -1,8 +1,8 @@
 
-import BudgetServiceCard from "../BudgetServiceCard/BudgetServiceCard";
-import BudgetCreationForm from "../BudgetCreationForm/BudgetCreationForm";
+import BudgetServiceCard from "../../budgetsListing/BudgetServiceCard/BudgetServiceCard";
+import BudgetCreationForm from "../../budgetCreation/BudgetCreationForm/BudgetCreationForm";
 import useBudgetManager from "./hooks/useBudgetsManager";
-import BudgetstList from "../BudgetstList/BudgetstList";
+import BudgetstList from "../../budgetsListing/BudgetstList/BudgetstList";
 
 import './styles/budgetsManager.css';
 

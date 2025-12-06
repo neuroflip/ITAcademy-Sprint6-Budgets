@@ -1,4 +1,4 @@
-import type { BudgetService } from "../../BudgetDataManager/BudgetDataManager.types"
+import type { BudgetService } from "../../../BudgetDataManager/BudgetDataManager.types"
 
 type BudgetServiceCardProps = {
   budget: BudgetServiceForCard,

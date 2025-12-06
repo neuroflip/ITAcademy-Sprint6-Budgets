@@ -11,7 +11,7 @@ const BudgetListFilter = ({ onFilterChange }: BudgetListFilterProps) => {
   }
 
   return <div className="flex-1">
-    <input id="filter" className="border border-gray-500 rounded p-2 bg-size-[15%] bg-no-repeat bg-right bg-[url('./src/components/BudgetstList/BudgetListFilter/assets/images/magnifyingGlass.png')]" onChange={ onFilterChangeHandler } type="text" value={ filter } />
+    <input id="filter" className="border border-gray-500 rounded p-2 bg-size-[15%] bg-no-repeat bg-right bg-[url('./src/features/budgetsListing/BudgetstList/BudgetListFilter/assets/images/magnifyingGlass.png')]" onChange={ onFilterChangeHandler } type="text" value={ filter } />
   </div>
 }
 

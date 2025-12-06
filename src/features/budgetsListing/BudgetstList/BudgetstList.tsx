@@ -1,9 +1,10 @@
 import BudgetstListCard from "./BudgetstListCard/BudgetstListCard";
 import BudgetListOrder from "./BudgetListOrder/BudgetListOrder";
 import BudgetListFilter from "./BudgetListFilter/BudgetListFilter";
-
-import type { BudgetData } from "../../BudgetDataManager/BudgetDataManager.types";
 import useBudgetsList from "./hooks/useBudgetsList";
+
+import type { BudgetData } from "../../../BudgetDataManager/BudgetDataManager.types";
+
 
 const BudgetstList = () => {
   const [budgets, onOrderClick, onFilterChange] = useBudgetsList();

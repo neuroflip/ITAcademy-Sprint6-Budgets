@@ -1,7 +1,8 @@
 import * as React from "react";
-import BudgetDataManager from "../../../BudgetDataManager/BudgetDataManager";
-import type { BudgetData } from "../../../BudgetDataManager/BudgetDataManager.types";
-import LocalStorageProvider from "../../../BudgetDataManager/providers/LocalStorageProvider";
+import BudgetDataManager from "../../../../BudgetDataManager/BudgetDataManager";
+import LocalStorageProvider from "../../../../BudgetDataManager/providers/LocalStorageProvider";
+
+import type { BudgetData } from "../../../../BudgetDataManager/BudgetDataManager.types";
 import type { OrderIntex } from "../BudgetListOrder/BudgetListOrder.types";
 
 const useBudgetsList = (): [Array<BudgetData>, (order: OrderIntex) => void, (value: string) => void] => {

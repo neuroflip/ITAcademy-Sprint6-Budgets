@@ -1,4 +1,4 @@
-import type { BudgetData } from "../../../BudgetDataManager/BudgetDataManager.types";
+import type { BudgetData } from "../../../../BudgetDataManager/BudgetDataManager.types";
 
 type BudgetListItemProps = {
   budget: BudgetData

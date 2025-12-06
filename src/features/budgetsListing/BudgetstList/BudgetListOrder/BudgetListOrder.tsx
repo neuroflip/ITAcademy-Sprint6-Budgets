@@ -17,13 +17,13 @@ const BudgetListOrder = ({ onOrderClick }: BudgetListOrderProps) => {
 
   return <div className="text-right flex-1">
     <span id={ ELEMENT_DATE } onClick={ onClickHandler } className={ `hover:font-bold ${orderSelected === ELEMENT_DATE ? 'font-bold' : ''}` }>
-      Date { orderSelected === ELEMENT_DATE ? ' *': '' }
+      Date { orderSelected === ELEMENT_DATE ? ' ^': '' }
     </span>
-    <span id={ ELEMENT_PRICE } onClick={ onClickHandler } className={ `hover:font-bold ${orderSelected === ELEMENT_PRICE ? 'font-bold' : ''}`}>
-      Price { orderSelected === ELEMENT_PRICE ? ' *': '' }
+    <span id={ ELEMENT_PRICE } onClick={ onClickHandler } className={ `ml-2 hover:font-bold ${orderSelected === ELEMENT_PRICE ? 'font-bold' : ''}`}>
+      Price { orderSelected === ELEMENT_PRICE ? ' ^': '' }
     </span>
-    <span id={ ELEMENT_NAME } onClick={ onClickHandler } className={ `hover:font-bold  ${orderSelected === ELEMENT_NAME ? 'font-bold' : ''}` }>
-      Name { orderSelected === ELEMENT_NAME ? ' *': '' }
+    <span id={ ELEMENT_NAME } onClick={ onClickHandler } className={ `ml-2 hover:font-bold  ${orderSelected === ELEMENT_NAME ? 'font-bold' : ''}` }>
+      Name { orderSelected === ELEMENT_NAME ? ' ^': '' }
     </span>
   </div>
 }

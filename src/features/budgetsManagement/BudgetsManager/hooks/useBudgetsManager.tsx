@@ -1,10 +1,10 @@
 import * as React from 'react';
-import BudgetDataManager from '../../../BudgetDataManager/BudgetDataManager';
-import type { BudgetServiceForCard } from '../../BudgetServiceCard/BudgetServiceCard.types';
+import BudgetDataManager from '../../../../BudgetDataManager/BudgetDataManager';
+import type { BudgetServiceForCard } from '../../../budgetsListing/BudgetServiceCard/BudgetServiceCard.types';
 import { calculateTotalCost, initValues } from '../helpers/utils';
-import LocalStorageProvider from '../../../BudgetDataManager/providers/LocalStorageProvider';
-import type { BudgetFormData } from '../../BudgetCreationForm/BudgetCreationForm.types';
-import type { BudgetData } from '../../../BudgetDataManager/BudgetDataManager.types';
+import LocalStorageProvider from '../../../../BudgetDataManager/providers/LocalStorageProvider';
+import type { BudgetFormData } from '../../../budgetCreation/BudgetCreationForm/BudgetCreationForm.types';
+import type { BudgetData } from '../../../../BudgetDataManager/BudgetDataManager.types';
 
 const useBudgetsManager = (): [Array<BudgetServiceForCard>, number, boolean, (budget: BudgetServiceForCard) => void,
       (data: BudgetFormData) => void, () => void] => {

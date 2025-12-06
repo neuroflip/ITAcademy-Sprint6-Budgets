@@ -11,12 +11,13 @@ const BudgetstListCard = ({ budget }: BudgetListItemProps) => {
         <h2 className="flex-1 font-bold text-left">Contracted services:</h2>
         <ul className="text-left">
           { budget.services.map((service) => 
-            <li className="list-disc ml-4">
-              { service.title } ({ service.extras && 
-                service.extras.map((extra, index) => <>
-                  { index > 0 ? ', ' : '' }
+            <li key={ service.title } className="list-disc ml-4">
+              { service.title } { service.extras && 
+                service.extras.map((extra, index) => <span key={ extra.text }>
+                  { index > 0 ? ', ' : '(' }
                   { extra.text }: { extra.value }
-                </>) })
+                  { index === (service.extras && service.extras.length - 1) ? ')' : '' }
+                </span>) }
             </li>) }
         </ul>
       </div>

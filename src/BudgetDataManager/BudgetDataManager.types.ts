@@ -1,4 +1,4 @@
-import type { BudgetServiceForCard, Extra } from "../components/BudgetServiceCard/BudgetServiceCard.types";
+import type { BudgetServiceForCard, Extra } from "../features/budgetsListing/BudgetServiceCard/BudgetServiceCard.types";
 
 interface BudgetService {
   id: number,
