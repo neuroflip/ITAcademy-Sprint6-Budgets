@@ -3,9 +3,9 @@ const VALIDCLASS = 'valid';
   
 import * as z from 'zod';
 
-const nameSchema = z.string().min(2, "The name must have at least 2 chars");
+const nameSchema = z.string().max(25).min(2, "The name must have at least 2 chars");
 const telephoneSchema = z.string().regex(/^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/, 'The telephone is not in the correct format');
-const emailSchema = z.email("The email is not in the correct format");
+const emailSchema = z.email("The email is not in the correct format").min(5).max(50);
 
 const BudgetFormSchema = z.object({ 
   name: nameSchema,
