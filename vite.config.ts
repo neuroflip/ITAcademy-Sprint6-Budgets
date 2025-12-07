@@ -7,6 +7,7 @@ export default defineConfig({
   base: "/ITAcademy-Sprint6-Budgets/",
   plugins: [react(), tailwindcss()],
   test: {
+    css: true,
     globals: true,
     environment: 'jsdom',
     setupFiles: './src/test/setupTests.ts',
