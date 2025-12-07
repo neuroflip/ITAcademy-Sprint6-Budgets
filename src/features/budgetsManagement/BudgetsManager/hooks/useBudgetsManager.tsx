@@ -40,6 +40,13 @@ const useBudgetsManager = (): [Array<BudgetServiceForCard>, Array<BudgetData>, n
         dataManager.saveBudget(budgetData);
         newBudgets.push(budgetData);
         setTotalBudgets(newBudgets);
+        setBudgetServices(() => {
+            const initialBudgetsServices = initValues()
+
+            setTotalValue(calculateTotalCost(initialBudgetsServices, 0));
+            return initialBudgetsServices;
+        });
+        setIsSwitchOn(false);
     }
 
     return [budgetServices, totalBudgets, calculatedTotalCost, isSwitchOn, onChangeBudget, onBudgetCreation, onSwitch];
