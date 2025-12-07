@@ -15,7 +15,11 @@ const BudgetstList = ({ initialBudgets }: BudgetsListProps) => {
       <BudgetListFilter onFilterChange={ onFilterChange } />
       <BudgetListOrder onOrderClick = { onOrderClick } />
     </div>
-    { budgets.map((data: BudgetData) => <BudgetstListCard key={ `${data.date}` } budget={ data } />) }
+    { budgets.length > 0 ? 
+        budgets.map((data: BudgetData) => <BudgetstListCard key={ `${data.date}` } budget={ data } />)
+      : <div className="container card__container flex p-25">
+          <span className="w-full text-center">There aren't ongoing budgets</span>
+        </div> }
   </div>);
 }
 
