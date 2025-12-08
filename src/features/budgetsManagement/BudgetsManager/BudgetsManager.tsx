@@ -1,5 +1,5 @@
 
-import BudgetServiceCard from "../../budgetsListing/BudgetServiceCard/BudgetServiceCard";
+import BudgetServiceCard from "../../budgetCreation/BudgetServiceCard/BudgetServiceCard";
 import BudgetCreationForm from "../../budgetCreation/BudgetCreationForm/BudgetCreationForm";
 import useBudgetManager from "./hooks/useBudgetsManager";
 import BudgetstList from "../../budgetsListing/BudgetstList/BudgetstList";

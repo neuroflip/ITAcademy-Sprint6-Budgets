@@ -7,6 +7,10 @@ class BudgetDataManager {
     this.provider = provider;
   }
 
+  getBudget(id: number) {
+    return this.provider.getBudget(id);
+  }
+
   saveBudget(data: BudgetData) {
     this.provider.saveBudget(data);
   }

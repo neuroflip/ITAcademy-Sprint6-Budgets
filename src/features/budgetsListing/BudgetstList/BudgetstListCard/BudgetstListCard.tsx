@@ -1,3 +1,5 @@
+import ClipboardCopySharer from "../../../../components/ClipboardCopySharer/ClipboardCopySharer";
+
 import type { BudgetListItemProps } from "./BudgetstListCard.types";
 
 const BudgetstListCard = ({ budget }: BudgetListItemProps) => {
@@ -25,6 +27,7 @@ const BudgetstListCard = ({ budget }: BudgetListItemProps) => {
         <div className="text-gray-500 font-bold">Total:</div>
         <span className="title">{ budget.totalCost }</span>€
       </div>
+      { budget.id && <ClipboardCopySharer id={ budget.id } /> }
   </div>)
 }
 
