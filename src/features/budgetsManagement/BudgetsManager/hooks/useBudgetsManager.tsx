@@ -3,7 +3,7 @@ import BudgetDataManager from '../../../../BudgetDataManager/BudgetDataManager';
 import { calculateTotalCost, initValues } from '../helpers/utils';
 import LocalStorageProvider from '../../../../BudgetDataManager/providers/LocalStorageProvider';
 
-import type { BudgetServiceForCard } from '../../../budgetsListing/BudgetServiceCard/BudgetServiceCard.types';
+import type { BudgetServiceForCard } from '../../../budgetCreation/BudgetServiceCard/BudgetServiceCard.types';
 import type { BudgetFormData } from '../../../budgetCreation/BudgetCreationForm/BudgetCreationForm.types';
 import type { BudgetData } from '../../../../BudgetDataManager/BudgetDataManager.types';
 

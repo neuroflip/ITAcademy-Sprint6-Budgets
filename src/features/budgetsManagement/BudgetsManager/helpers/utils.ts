@@ -1,5 +1,5 @@
     
-import type { BudgetServiceForCard, Extra } from "../../../budgetsListing/BudgetServiceCard/BudgetServiceCard.types";
+import type { BudgetServiceForCard, Extra } from "../../../budgetCreation/BudgetServiceCard/BudgetServiceCard.types";
 import budgetData from '../budget.config.json';
 
 const baseExtrasCost = 30;

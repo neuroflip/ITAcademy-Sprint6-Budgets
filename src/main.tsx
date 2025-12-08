@@ -7,8 +7,7 @@ import './styles/index.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/ITAcademy-Sprint6-Budgets">
       <App />
     </BrowserRouter>
-  </StrictMode>
-)
+  </StrictMode>);
