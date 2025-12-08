@@ -7,9 +7,9 @@ const ModalInfo = ({ message, isOpen, onClose }: ModalInfoProps) => {
     onClose();
   }
 
-  return <div className={ `modal ${isOpen ? 'block' : 'hidden'}` }>
+  return <div data-testId="modalContainer" className={ `modal ${isOpen ? 'block' : 'hidden'}` }>
     <div className="modal-content rounded-xl">
-      <span className="close" onClick={ onCloseHandler }>&times;</span>
+      <span className="close" onClick={ onCloseHandler }>X</span>
       <p>{ message }</p>
     </div>
   </div>

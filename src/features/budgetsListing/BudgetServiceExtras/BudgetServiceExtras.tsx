@@ -1,21 +1,11 @@
-import * as React from 'react';
 import type { BudgetServiceExtrasProps } from "./BudgetServiceExtras.types";
 import ModalInfo from "../../../components/ModalInfo/ModalInfo";
+import useBudgetServiceExtras from "./hooks/useBudgetServiceExtras";
 
 import './styles/budgetServiceExtras.css';
 
-const BudgetExtras = ({ id, text, value, infoMessage, onChange }: BudgetServiceExtrasProps) => {
-  const [ isModalOpen, setIsModalOpen ] = React.useState(false);
-  const onClick = (operator: number) => {
-    const total = value + operator;
-
-    if (total >= 1) {
-      onChange(Number(id), total);
-    }
-  }
-  const onModalClick = () => {
-    setIsModalOpen(!isModalOpen);
-  }
+const BudgetServiceExtras = ({ id, text, value, infoMessage, onChange }: BudgetServiceExtrasProps) => {
+  const [ isModalOpen, onClick, onModalClick ] = useBudgetServiceExtras(id, value, onChange);
 
   return (<div className='text-right'>
     <ModalInfo message={ infoMessage } isOpen={ isModalOpen } onClose={ onModalClick } />
@@ -27,4 +17,4 @@ const BudgetExtras = ({ id, text, value, infoMessage, onChange }: BudgetServiceE
   </div>)
 }
 
-export default BudgetExtras;
+export default BudgetServiceExtras;

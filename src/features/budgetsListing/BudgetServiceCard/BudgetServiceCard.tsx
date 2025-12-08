@@ -18,10 +18,10 @@ const BudgetServiceCard = ({ budget, onChangeBudget, discount }: BudgetServiceCa
         <div className="col-start-1 col-end-6 row-span-1 justify-self-end mt-5">
             { budget && budget.extras && budget.isChecked ? <>
                 { budget.extras ? <BudgetServiceExtras text={ budget.extras[0].text }
-                    infoMessage="Add the pages number that your peoject will have. It will add 30€ per page." id='0'
+                    infoMessage="Add the pages number that your peoject will have. It will add 30€ per page." id="0"
                     value={ budget.extras && budget.extras[0].value } onChange={ onChangeExtras } /> : <></> }
                 { budget.extras ? <BudgetServiceExtras text={ budget.extras[1].text }
-                    infoMessage="Add the languages number that your project will have. It will add 30€ per language." id='1'
+                    infoMessage="Add the languages number that your project will have. It will add 30€ per language." id="1"
                     value={ budget.extras[1].value } onChange={ onChangeExtras } /> : <></> }
             </> : <></> }
         </div>
