@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: ".",
+  base: "/ITAcademy-Sprint6-Budgets/",
   plugins: [react(), tailwindcss()],
   test: {
     css: true,
