@@ -28,7 +28,7 @@ describe('Modal Info', () => {
     });
   });
 
-  describe('Modal Info Render', () => {
+  describe('Modal Info Close', () => {
     it('hidden container clicking on X', () => {
       const onClose = vi.fn();
       render(<ModalInfo isOpen={true} message="Info Message" onClose={ onClose } />);
