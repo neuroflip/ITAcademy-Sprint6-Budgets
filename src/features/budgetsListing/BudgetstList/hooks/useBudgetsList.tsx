@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import type { BudgetData } from "../../../../BudgetDataManager/BudgetDataManager.types";
-import type { OrderIndex } from "../BudgetListOrder/BudgetListOrder.types";
+import type { OrderIndex } from "../../BudgetListOrder/BudgetListOrder.types";
 
 const useBudgetsList = (totalBudgets: Array<BudgetData>): [ Array<BudgetData>, (order: OrderIndex) => void, (value: string) => void ] => {
   const [ budgets, setBudgets ] = React.useState<Array<BudgetData>>(totalBudgets);

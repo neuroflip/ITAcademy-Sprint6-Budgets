@@ -1,6 +1,6 @@
 import BudgetstListCard from "./BudgetstListCard/BudgetstListCard";
-import BudgetListOrder from "./BudgetListOrder/BudgetListOrder";
-import BudgetListFilter from "./BudgetListFilter/BudgetListFilter";
+import BudgetListOrder from "../BudgetListOrder/BudgetListOrder";
+import BudgetListFilter from "../BudgetListFilter/BudgetListFilter";
 import useBudgetsList from "./hooks/useBudgetsList";
 
 import type { BudgetData } from "../../../BudgetDataManager/BudgetDataManager.types";
