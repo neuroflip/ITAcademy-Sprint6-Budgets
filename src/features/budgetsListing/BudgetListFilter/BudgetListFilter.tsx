@@ -10,8 +10,8 @@ const BudgetListFilter = ({ onFilterChange }: BudgetListFilterProps) => {
     onFilterChange(value);
   }
 
-  return <div className="flex-1">
-    <input id="filter" className="border border-gray-500 rounded p-2 bg-size-[15%] bg-no-repeat bg-right bg-[url('./src/features/budgetsListing/BudgetstList/BudgetListFilter/assets/images/magnifyingGlass.png')]" onChange={ onFilterChangeHandler } type="text" value={ filter } />
+  return <div className="flex-1 text-left">
+    <input id="filter" className="border border-gray-500 rounded p-2 bg-size-[15%] bg-no-repeat bg-right bg-[url('./src/features/budgetsListing/BudgetListFilter/assets/images/magnifyingGlass.png')]" onChange={ onFilterChangeHandler } type="text" value={ filter } />
   </div>
 }
 

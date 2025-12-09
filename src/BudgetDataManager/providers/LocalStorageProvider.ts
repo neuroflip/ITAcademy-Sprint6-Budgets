@@ -17,7 +17,7 @@ class LocalStorageProvider implements BudgetDataProvider {
   }
 
   getBudget(id:number) {
-    const dataArray =  JSON.parse(localStorage.getItem(LOCALSTORAGEKEY) || '[]');
+    const dataArray =  this.getBudgets();
     const data = dataArray.find((element: BudgetData) => element.id === id)
     
     return data;
