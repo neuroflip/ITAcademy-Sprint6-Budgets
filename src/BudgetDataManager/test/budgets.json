@@ -1,0 +1,37 @@
+[{
+  "date": "2025-12-08T19:25:09.855Z",
+  "email": "jose@gmail.com",
+  "id": 12345,
+  "name": "Jose A",
+  "services": [
+    {
+      "cost": 500,
+      "description": "Development of a complet responsive web development",
+      "extras": [{
+        "id": 0, "text": "Pages number", "value": 1
+      }],
+      "id": 0,
+      "isChecked": true,
+      "title": "Web"
+    }],
+  "telephone": "34234",
+  "totalCost": 496
+},{
+  "date": "2025-12-01T19:02:10.125Z",
+  "email": "pepe@gmail.com",
+  "id": 12346,
+  "name": "Pepe A",
+  "services": [
+    {
+      "cost": 300,
+      "description": "Development of a complet responsive web development",
+      "extras": [{
+        "id": 0, "text": "Pages number", "value": 10
+      }],
+      "id": 0,
+      "isChecked": true,
+      "title": "Web"
+    }],
+  "telephone": "12312334234",
+  "totalCost": 330
+}]
