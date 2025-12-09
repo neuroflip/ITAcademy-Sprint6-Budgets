@@ -12,6 +12,10 @@ type Extra = {
   value: number
 }
 
-interface BudgetServiceForCard extends BudgetService { isChecked: boolean, title: string, description: string };
+interface BudgetServiceForCard extends BudgetService { 
+  isChecked: boolean,
+  title: string,
+  description: string
+};
 
 export type { BudgetServiceCardProps, BudgetService, BudgetServiceForCard, Extra }

@@ -1,8 +1,11 @@
 # Sprint 6 Budgets
 
 ## Introduction
+This is the implementation of the ITAcademy Sprint6 - Budgets:
 
-This is the implementation of the ITAcademy Sprint6 - Budgets.
+![project screenshot](/etc/screenshot.png)
+
+* Note: the project is deployed in ghpages, but it does not work correctly because ghpages does not manage the app routes: [Budgets app in ghpages](https://neuroflip.github.io/ITAcademy-Sprint6-Budgets/)
 
 ### Features
 
@@ -46,10 +49,35 @@ $ npm run lint
 
 ## Project structure
 
+The project is structured with the next philosophy:
+ - src/components: common components used broadly like ModalInfo, ClipboardCopySharer, Header or ErrorBoundary
+ - src/features: components organized by app feature:
+    - budgetCreation: creation form, service card, service extras
+    - budgetsListing: budget list, order and filter
+    - budgetsManagement: main feature that implements the budget services, form and budget list
+    - budgetView: detail view for a budget 
+ - src/pages for the app router:
+    - landing: for the root route / 
+    - budgets: for the /budgets route (to create and budget listing)
+    - budget: for /budget/:id route (to view a budget using his url link)
+ - src/BudgetDataManager: manager using a data provider to manage the budgets data for the app
+
+As always the BudgetDataManager gets the provider using dependency injection to easily add new providers (or for testing).
+
 ## Components diagram: 
 
+![Project components diagram](/etc/componentsDiagram.png)
+
 ## Considerations
+- some components have a custom hook to separate the ui from the logic
+- testing:
+  - not all the components are fully tested
+  - inside features/budgetCreation there are some end2end tests based on load a budgetsManager and interact with it (budget request creation and budget cost after click to add sewrvices to a budget).
 
 ## CI pipeline
+
+The project is managing a CI process using test execution and eslint execution using github actions. Check file .github/workflows/main.yml for more information. This pipeline is executed when some developer wants creates a PR to integrate into main (as example).
+
+![alt ci pipeline execution result in a correct PR](/etc/ci.png)
 
 <br />
