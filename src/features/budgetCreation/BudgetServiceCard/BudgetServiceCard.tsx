@@ -13,9 +13,9 @@ const BudgetServiceCard = ({ budget, onChangeBudget, discount }: BudgetServiceCa
         <span>
             { discount > 0 ? <div className="text-amber-600">save 20%</div> : "" }
             <h1 className="title inline">{ budget.cost - (budget.cost * discount) }</h1>€</span>
-        <label className='justify-self-start ml-1'>
-            Add { budget.title }
-            <input id={`apply${budget.id}`} onChange={ onClickCheckBox } type="checkbox" className="justify-self-end w-4 h-4 border rounded" checked={ budget.isChecked } />
+        <label className="text-right col-start-4 col-end-6 justify-self-start ml-1">
+            { `Add ${budget.title}` }
+            <input id={`apply${budget.id}`} onChange={ onClickCheckBox } type="checkbox" className="ml-3 justify-self-end w-4 h-4 border rounded" checked={ budget.isChecked } />
         </label>
 
         <div className="col-start-1 col-end-6 row-span-1 justify-self-end mt-5">

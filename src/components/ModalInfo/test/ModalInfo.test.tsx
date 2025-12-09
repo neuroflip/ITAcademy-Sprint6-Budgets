@@ -22,9 +22,8 @@ describe('Modal Info', () => {
 
     it('renders a close element', () => {
       render(<ModalInfo isOpen={true} message="Info Message" onClose={ () => {} } />);
-      const closeDiv = screen.getByText(/X/i);
 
-      expect(closeDiv).toBeInTheDocument();
+      expect(screen.getByText(/X/i)).toBeInTheDocument();
     });
   });
 
