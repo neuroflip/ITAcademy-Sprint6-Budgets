@@ -39,3 +39,4 @@ class LocalStorageProvider implements BudgetDataProvider {
 }
 
 export default LocalStorageProvider;
+export { LOCALSTORAGEKEY };

@@ -25,7 +25,7 @@ const BudgetsManager = () => {
                 budget={ budgetService } />
         })}
         <div className="container text-right">
-            Budget price: <h1 className="inline ml-1 font-bold text-3xl">{ calculatedTotalCost }</h1>€
+            Budget price: <h1 id="totalCost" className="inline ml-1 font-bold text-3xl">{ calculatedTotalCost }</h1>€
         </div>
         { calculatedTotalCost > 0 && <BudgetCreationForm onBudgetCreation={ onBudgetCreation }/> }
 
