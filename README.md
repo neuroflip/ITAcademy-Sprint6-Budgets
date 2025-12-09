@@ -70,9 +70,14 @@ As always the BudgetDataManager gets the provider using dependency injection to 
 
 ## Considerations
 - some components have a custom hook to separate the ui from the logic
+- used data types:
+  - BudgetService: implements the data needed to manage a budget service and his extras (like in web service to manage languages and pages)
+  - BudgetServiceForCard: extends the BudgetService used in the services cards
+  - BudgetData: implements a budget with all the data including the request and all the services for that budget.
 - testing:
   - not all the components are fully tested
   - inside features/budgetCreation there are some end2end tests based on load a budgetsManager and interact with it (budget request creation and budget cost after click to add sewrvices to a budget).
+
 
 ## CI pipeline
 
