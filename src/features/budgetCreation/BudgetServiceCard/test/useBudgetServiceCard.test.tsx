@@ -14,16 +14,6 @@ const budget = {
 
 const onChangeBudget = vi.fn();
 
-/*
-    const onChangeExtras = (extraId: number, value: number) => {
-        const newBudgetValues = { ...budget };
-
-        if (newBudgetValues.extras) {
-            newBudgetValues.extras[extraId].value = value;
-        }
-        onChangeBudget(newBudgetValues);
-    }
-*/
 describe('useBudgetServiceCard', () => {
   describe('useBudgetServiceCard', () => {
     it('calls the onChangeBudget with isChecked = true after a onClickCheckBox call', () => {
