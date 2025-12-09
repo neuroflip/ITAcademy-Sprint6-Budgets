@@ -43,4 +43,24 @@ describe('Budget creation flow: calculation of total cost', () => {
 
     expect(screen.getByText(/Budget price/i).textContent).toEqual("Budget price: 0€");
   });
+
+  it('calculates the total cost of the budget, including extra web services when discount is active ', () => {
+    render(<BudgetsManager />);
+
+    const discountCheck = screen.getByRole("checkbox", { name: "Monthly paymentAnnual payment" });
+    const webCheck = screen.getByRole("checkbox", { name: "Add Web" });
+    act(() => {
+      fireEvent.click(webCheck);
+      fireEvent.click(discountCheck);
+    });
+    
+    const plusElement = screen.getAllByRole('button', {name: '+' })[0];
+
+    act(() => {
+      fireEvent.click(plusElement);
+    });
+
+    expect(screen.getByText(/Budget price/i).textContent).toEqual("Budget price: 496€");
+
+  });
 });

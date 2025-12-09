@@ -10,14 +10,14 @@ const BudgetsManager = () => {
     const [ budgetServices, totalBudgets, calculatedTotalCost, isSwitchOn, onChangeBudget, onBudgetCreation, onSwitch ] = useBudgetManager();
 
     return  (<div className="mt-10">
-        <div className="leading-8">
+        <label className="leading-8">
             Monthly payment
             <label className="switch mx-5">
                 <input id="annualSwitch" type="checkbox" onChange= { onSwitch } checked={ isSwitchOn } />
                 <span className="slider round"></span>
             </label>
             Annual payment
-        </div>
+        </label>
         { budgetServices.map((budgetService) => {
             return <BudgetServiceCard key={ budgetService.cost }
                 discount={ isSwitchOn ? 0.2 : 0.0 }
