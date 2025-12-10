@@ -77,6 +77,7 @@ As always the BudgetDataManager gets the provider using dependency injection to 
 - testing:
   - not all the components are fully tested
   - inside features/budgetCreation there are some end2end tests based on load a budgetsManager and interact with it (budget request creation and budget cost after click to add sewrvices to a budget).
+  - inside features/budgetsListing there are some end2end tests to check the budget listing feature, including ordering and filtering the budgets.
 
 
 ## CI pipeline
