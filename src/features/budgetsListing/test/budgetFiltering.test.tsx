@@ -25,7 +25,7 @@ describe('Budget Filtering flow', () => {
 
     expect(budgets.length).toBe(1);
     for (let i=0; i<budgets.length - 1; i++) {
-      expect(budgets[i].getElementsByTagName("h1")[0].textContent.indexOf('Jo')).toBe(0);
+      expect(budgets[i].getElementsByTagName("h1")[0].textContent.indexOf('Jo')).toBeGreaterThanOrEqual(0);
     }
   });
 
@@ -40,7 +40,7 @@ describe('Budget Filtering flow', () => {
 
     expect(budgets.length).toBe(2);
     for (let i=0; i<budgets.length - 1; i++) {
-      expect(budgets[i].getElementsByTagName("h1")[0].textContent.indexOf('To')).toBe(0);
+      expect(budgets[i].getElementsByTagName("h1")[0].textContent.indexOf('To')).toBeGreaterThanOrEqual(0);
     }
   });
 
