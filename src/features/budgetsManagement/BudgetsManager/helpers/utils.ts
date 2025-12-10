@@ -23,9 +23,9 @@ const initValues = () => {
 
 const calculateTotalCost = (values: Array<BudgetServiceForCard>, discount: number) => {
     const price = values.reduce((acc: number, element: BudgetServiceForCard) => {
-            const extrasCost = element.extras ? element.extras.reduce((acc: number, extra: Extra) => acc + extra.value, 0) : 0;
+            const extrasNumber = element.extras ? element.extras.reduce((acc: number, extra: Extra) => acc + extra.value, 0) : 0;
 
-            return element.isChecked ? acc + element.cost + extrasCost * baseExtrasCost : acc;
+            return element.isChecked ? acc + element.cost + extrasNumber * baseExtrasCost : acc;
         }, 0);
 
     return price - (price * discount);

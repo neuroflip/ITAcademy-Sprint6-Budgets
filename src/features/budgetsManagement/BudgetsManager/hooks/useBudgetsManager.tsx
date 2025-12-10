@@ -11,12 +11,12 @@ const useBudgetsManager = (): [Array<BudgetServiceForCard>, Array<BudgetData>, n
       (data: BudgetFormData) => void, () => void] => {
     const [ budgetServices, setBudgetServices ] = React.useState<Array<BudgetServiceForCard>>(initValues());
     const [ isSwitchOn, setIsSwitchOn ] = React.useState(false);
-    const [calculatedTotalCost, setTotalValue] = React.useState(calculateTotalCost(budgetServices, isSwitchOn ? 0.2 : 0));
+    const [calculatedTotalCost, setCalculatedTotalCost] = React.useState(calculateTotalCost(budgetServices, isSwitchOn ? 0.2 : 0));
     const dataManager = new BudgetDataManager(new LocalStorageProvider());
     const [ totalBudgets, setTotalBudgets ] = React.useState<Array<BudgetData>>(dataManager.getBudgets());
 
     const onSwitch = () => {
-        setTotalValue(calculateTotalCost(budgetServices, !isSwitchOn ? 0.2 : 0));
+        setCalculatedTotalCost(calculateTotalCost(budgetServices, !isSwitchOn ? 0.2 : 0));
         setIsSwitchOn(!isSwitchOn);
     }
 
@@ -24,7 +24,7 @@ const useBudgetsManager = (): [Array<BudgetServiceForCard>, Array<BudgetData>, n
         const newValues = [...budgetServices];
 
         newValues[budgetService.id] =  budgetService;
-        setTotalValue(calculateTotalCost(newValues, isSwitchOn ? 0.2 : 0));
+        setCalculatedTotalCost(calculateTotalCost(newValues, isSwitchOn ? 0.2 : 0));
         setBudgetServices(newValues);
     }
 
@@ -43,7 +43,7 @@ const useBudgetsManager = (): [Array<BudgetServiceForCard>, Array<BudgetData>, n
         setBudgetServices(() => {
             const initialBudgetsServices = initValues()
 
-            setTotalValue(calculateTotalCost(initialBudgetsServices, 0));
+            setCalculatedTotalCost(calculateTotalCost(initialBudgetsServices, 0));
             return initialBudgetsServices;
         });
         setIsSwitchOn(false);
