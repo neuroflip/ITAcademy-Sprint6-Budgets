@@ -9,7 +9,7 @@ const ELEMENT_NAME = "name";
 
 const BudgetListOrder = ({ onOrderClick }: BudgetListOrderProps) => {
   const [orderSelected, setOrderSelected] = React.useState<string>(ELEMENT_DATE);
-  const getOrderElementClassName = (order: OrderIndex) => `mr-2 hover:font-bold ${orderSelected === order ? 'font-bold' : ''}`;
+  const getOrderElementClassName = (order: OrderIndex) => `cursor-pointer sm:text-base text-sm mr-2 hover:font-bold ${orderSelected === order ? 'font-bold' : ''}`;
   const getOrderIndicator = (order: OrderIndex) => orderSelected === order ? ' ^': '';
   const onClickHandler = (event: React.MouseEvent<HTMLSpanElement>) => {
     const element = event.target as HTMLSpanElement;

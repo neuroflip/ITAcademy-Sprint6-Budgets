@@ -9,7 +9,7 @@ const BudgetCreationForm = ({ onBudgetCreation }: BudgetCreationFormProps) => {
 
   return <div className="my-20 container text-left dropShadow p-10 rounded-xl">
       <h1 className="text-left title">Request a budget</h1>
-      <form className="budgetForm my-5 grid grid-cols-1 sm:grid-cols-4 gap-3" action={ submitAction } noValidate>
+      <form className="budgetForm my-5 grid grid-cols-1 sm:grid-cols-4 gap-3 items-center" action={ submitAction } noValidate>
         <label className="row-start-1 sm:row-start-1">
           Name:
           <input value={ name } onChange={ validateName } className="w-full sm:w-40 border border-gray-500 rounded mr-3 p-3" type="text" minLength={2} maxLength={25} placeholder="Name..." id="name" name="name" />
@@ -22,7 +22,7 @@ const BudgetCreationForm = ({ onBudgetCreation }: BudgetCreationFormProps) => {
           Email:
           <input value = { email } onChange = { validateEmail } className="w-full sm:w-40 border border-gray-500 rounded mr-3 p-3" type="email" minLength={5} maxLength={50} placeholder="Email" id="email" name="email" />
         </label>
-        <button className="row-start-4 sm:row-start-1 w-40 button p-0" type="submit">{ pending ? "Submitting..." : "Request" }</button>
+        <button className="h-10 row-start-4 sm:row-start-1 w-40 button p-0" type="submit">{ pending ? "Submitting..." : "Request" }</button>
         <div className="error__feedback name__feedback col-span-4"></div>
         <div className="error__feedback telephone__feedback col-span-4"></div>
         <div className="error__feedback email__feedback col-span-4"></div>
