@@ -5,7 +5,7 @@ const ClipboardCopySharer = ({ id }: ClipboardCopySharerProps) => {
     navigator.clipboard?.writeText(`${window.location.host}/ITAcademy-Sprint6-Budgets/budget/${id}`);
   }
 
-  return <div className="self-start cursor-pointer" title="Copy Link" onClick={ onCopyClick }>📎</div>
+  return <div className="col-start-4 row-start-2 sm:row-start-1 self-start cursor-pointer" title="Copy Link" onClick={ onCopyClick }>📎</div>
 }
 
 export default ClipboardCopySharer;
