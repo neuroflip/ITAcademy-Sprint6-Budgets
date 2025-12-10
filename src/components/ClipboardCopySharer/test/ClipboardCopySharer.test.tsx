@@ -19,6 +19,7 @@ describe('ClipboardCopySharer', () => {
       expect(clip).toBeInTheDocument();
     });
   });
+
   describe('ClipboardCopySharer Render', () => {
     it('copies to clipboard when clicked', () => {
       render(<ClipboardCopySharer id={ 123 } />);
