@@ -47,7 +47,7 @@ describe('Budget creation flow: calculation of total cost', () => {
   it('calculates the total cost of the budget, including extra web services when discount is active ', () => {
     render(<BudgetsManager />);
 
-    const discountCheck = screen.getByRole("checkbox", { name: "Monthly paymentAnnual payment" });
+    const discountCheck = screen.getByRole("checkbox", { name: "MonthlyAnnual payment" });
     const webCheck = screen.getByRole("checkbox", { name: "Add Web" });
     act(() => {
       fireEvent.click(webCheck);
