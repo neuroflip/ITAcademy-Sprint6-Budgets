@@ -9,7 +9,7 @@ vi.mock(import('../helpers/validations'), async (importOriginal) => {
   return {
     ...mod,
     validateInput: vi.fn(),
-    onSubmitValidation: vi.fn().mockReturnValue(true)
+    formDataValidates: vi.fn().mockReturnValue(true)
   }
 })
 
@@ -76,7 +76,7 @@ describe('useBudgetCreationForm', () => {
       formData.append("email", "input email");
       submitAction(formData);
 
-      expect(vi.mocked(validations.onSubmitValidation)).toHaveBeenCalledWith(formData);
+      expect(vi.mocked(validations.formDataValidates)).toHaveBeenCalledWith(formData);
       expect(onBudgetCreation).toHaveBeenCalledWith({
         "email": "input email",
         "name": "input name",

@@ -64,7 +64,7 @@ const cleanErrorsOnSubmit = () => {
   }
 }
 
-const onSubmitValidation = (formData: FormData) => { 
+const formDataValidates = (formData: FormData) => { 
   const nameValidates = validateInput('.name__feedback', 'name', formData.get('name') as string || '', nameSchema);
   const telephoneValidates = validateInput('.telephone__feedback', 'telephone', formData.get('telephone') as string || '', telephoneSchema);
   const emailValidates = validateInput('.email__feedback', 'name', formData.get('email') as string || '', emailSchema);
@@ -78,4 +78,4 @@ const onSubmitValidation = (formData: FormData) => {
   }
 }
 
-export { validateInput, validateFormData, onSubmitValidation, nameSchema, telephoneSchema, emailSchema };
+export { validateInput, validateFormData, formDataValidates, nameSchema, telephoneSchema, emailSchema };

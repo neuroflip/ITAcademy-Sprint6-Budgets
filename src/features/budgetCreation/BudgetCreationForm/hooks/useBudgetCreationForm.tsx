@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useFormStatus } from "react-dom";
-import { validateInput, nameSchema, telephoneSchema, emailSchema, onSubmitValidation } from "../helpers/validations";
+import { validateInput, nameSchema, telephoneSchema, emailSchema, formDataValidates } from "../helpers/validations";
 import type { BudgetFormData } from '../BudgetCreationForm.types';
 
 const useBudgetCreationForm = (onBudgetCreation: (data: BudgetFormData) => void):
@@ -34,7 +34,7 @@ const useBudgetCreationForm = (onBudgetCreation: (data: BudgetFormData) => void)
   }
 
   const submitAction = (formData: FormData) => {
-    if (onSubmitValidation(formData)) {
+    if (formDataValidates(formData)) {
       onBudgetCreation({
         name: String(formData.get('name')) || '',
         telephone: String(formData.get('telephone')) || '',
