@@ -74,6 +74,7 @@ As always the BudgetDataManager gets the provider using dependency injection to 
   - BudgetService: implements the data needed to manage a budget service and his extras (like in web service to manage languages and pages)
   - BudgetServiceForCard: extends the BudgetService used in the services cards
   - BudgetData: implements a budget with all the data including the request and all the services for that budget.
+- BudgetsDataManager is the data controller with get and save functionallity. It uses internally a data provider that is an injected dependency at creation time. The current provider implemented is a LocalStorage data provider, but it is easy to implement and inject a new one using DB, memory or any other method.
 - testing:
   - not all the components are fully tested
   - inside features/budgetCreation there are some end2end tests based on load a budgetsManager and interact with it (budget request creation and budget cost after click to add sewrvices to a budget).
