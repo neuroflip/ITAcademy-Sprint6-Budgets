@@ -10,7 +10,7 @@ const useBudgetsList = (totalBudgets: Array<BudgetData>): [ Array<BudgetData>, (
     
     newBudgets.sort((a, b) => {
       return (a[order] < b[order] ? -1 : a[order] > b[order] ? 1 : 0)
-    })
+    });
     setBudgets(newBudgets);
   }
   const onFilterChange = (value: string) => {
