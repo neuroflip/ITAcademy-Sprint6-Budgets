@@ -20,13 +20,13 @@ const BudgetListOrder = ({ onOrderClick }: BudgetListOrderProps) => {
   }
 
   return <div className="text-right flex-1">
-    <span id={ ELEMENT_DATE } onClick={ onClickHandler } className={ getOrderElementClassName(ELEMENT_DATE) }>
+    <span role="button" id={ ELEMENT_DATE } onClick={ onClickHandler } className={ getOrderElementClassName(ELEMENT_DATE) }>
       Date <span className="orderElement">{ getOrderIndicator(ELEMENT_DATE) }</span>
     </span>
-    <span id={ ELEMENT_PRICE } onClick={ onClickHandler } className={ getOrderElementClassName(ELEMENT_PRICE)}>
+    <span role="button" id={ ELEMENT_PRICE } onClick={ onClickHandler } className={ getOrderElementClassName(ELEMENT_PRICE)}>
       Price <span className="orderElement">{ getOrderIndicator(ELEMENT_PRICE) }</span>
     </span>
-    <span id={ ELEMENT_NAME } onClick={ onClickHandler } className={ getOrderElementClassName(ELEMENT_NAME) }>
+    <span role="button" id={ ELEMENT_NAME } onClick={ onClickHandler } className={ getOrderElementClassName(ELEMENT_NAME) }>
       Name <span className="orderElement">{ getOrderIndicator(ELEMENT_NAME) }</span>
     </span>
   </div>

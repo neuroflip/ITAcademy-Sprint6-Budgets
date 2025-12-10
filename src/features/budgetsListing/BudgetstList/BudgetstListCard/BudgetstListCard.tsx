@@ -3,7 +3,7 @@ import ClipboardCopySharer from "../../../../components/ClipboardCopySharer/Clip
 import type { BudgetListItemProps } from "./BudgetstListCard.types";
 
 const BudgetstListCard = ({ budget }: BudgetListItemProps) => {
-  return (<div className="card__container container grid w-full m-auto grid-cols-[25%_60%_10%_5%]">
+  return (<article className="card__container container grid w-full m-auto grid-cols-[25%_60%_10%_5%]">
       <div className="text-left col-start-1 col-end-3 row-start-1 sm:col-start-1 sm:row-end-2 sm:col-end-2">
         <h1 className="title truncate">{ budget.name }</h1>
         <div className="text-gray-800 truncate">{ budget.email }</div>
@@ -28,7 +28,7 @@ const BudgetstListCard = ({ budget }: BudgetListItemProps) => {
         <span className="title">{ budget.totalCost }</span>€
       </div>
       { budget.id && <ClipboardCopySharer id={ budget.id } /> }
-  </div>)
+  </article>)
 }
 
 export default BudgetstListCard;
