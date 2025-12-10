@@ -6,8 +6,8 @@ const BudgetstListCard = ({ budget }: BudgetListItemProps) => {
   return (<div className="card__container container grid w-full m-auto grid-cols-[25%_60%_10%_5%]">
       <div className="text-left col-start-1 col-end-3 row-start-1 sm:col-start-1 sm:row-end-2 sm:col-end-2">
         <h1 className="title truncate">{ budget.name }</h1>
-        <div className="text-gray-500 truncate">{ budget.email }</div>
-        <div className="text-gray-500 truncate">{ budget.telephone }</div>
+        <div className="text-gray-800 truncate">{ budget.email }</div>
+        <div className="text-gray-800 truncate">{ budget.telephone }</div>
       </div>
       <div className="mt-2 sm:mt-0 row-start-2 col-start-1 col-end-4 sm:row-start-1 sm:col-start-2 sm-col-end-3">
         <h2 className="font-bold text-left">Contracted services:</h2>
