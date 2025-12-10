@@ -10,7 +10,7 @@ const BudgetServiceExtras = ({ id, text, value, infoMessage, onChange }: BudgetS
   return (<div className='text-right'>
     <ModalInfo message={ infoMessage } isOpen={ isModalOpen } onClose={ onModalClick } />
     <span onClick={ onModalClick } className="align-middle cursor-pointer text-gray-500 p-1 mr-2">(i)</span>
-    <span className="mr-3 text-gray-700 font-bold">{ text }:</span>
+    <span className="sm:mr-3 text-gray-700 font-bold text-sm sm:text-base">{ text }:</span>
     <button className="budgetExtras__button" onClick={ () => { onClick(-1) } }>-</button>
     <input className="budgetExtras__value" type="text" id={ id } value={ value } readOnly />
     <button className="budgetExtras__button" onClick={ () => { onClick(1) } }>+</button>

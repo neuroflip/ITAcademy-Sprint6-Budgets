@@ -2,6 +2,6 @@
 
 @layer base {
   .orderElement {
-    @apply rotate-180 inline-block relative -top-1 font-bold;
+    @apply rotate-180 inline-block relative -top-1 font-bold cursor-pointer;
   }
 }
