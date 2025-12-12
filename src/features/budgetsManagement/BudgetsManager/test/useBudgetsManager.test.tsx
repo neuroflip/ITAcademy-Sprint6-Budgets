@@ -12,7 +12,7 @@ vi.mock('../../../../BudgetDataManager/BudgetDataManager', () => {
 
     getBudgets = vi.fn().mockReturnValue([
       {
-        id: 0,
+        id: "0",
         date: "date0",
         name: "budgetData0",
         telephone: "telephone budgetData0",
@@ -21,7 +21,7 @@ vi.mock('../../../../BudgetDataManager/BudgetDataManager', () => {
         services: []
       },
       {
-        id: 1,
+        id: "1",
         date: "date1",
         name: "budgetData1",
         telephone: "telephone budgetData1",
@@ -59,7 +59,7 @@ describe('useBudgetsManager', () => {
     const totalBudgets = result.current[1];
 
     expect(totalBudgets).toStrictEqual([{
-      id: 0,
+      id: "0",
       date: "date0",
       name: "budgetData0",
       telephone: "telephone budgetData0",
@@ -68,7 +68,7 @@ describe('useBudgetsManager', () => {
       services: []
     },
     {
-      id: 1,
+      id: "1",
       date: "date1",
       name: "budgetData1",
       telephone: "telephone budgetData1",

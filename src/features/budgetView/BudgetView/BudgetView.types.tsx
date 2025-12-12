@@ -1,5 +1,5 @@
 type BudgetViewProps = {
-  id: number
+  id: string
 }
 
 export type { BudgetViewProps };

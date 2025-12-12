@@ -13,14 +13,14 @@ Object.assign(navigator, {
 describe('ClipboardCopySharer', () => {
   describe('ClipboardCopySharer Render', () => {
     it('renders the ui to be able to copy to clipboard', () => {
-      render(<ClipboardCopySharer id={ 123 } />);
+      render(<ClipboardCopySharer id="123" />);
       const clip = screen.getByText(/📎/i);
 
       expect(clip).toBeInTheDocument();
     });
 
     it('copies to clipboard when clicked', () => {
-      render(<ClipboardCopySharer id={ 123 } />);
+      render(<ClipboardCopySharer id="123" />);
       const clip = screen.getByText(/📎/i);
 
       act(() => {

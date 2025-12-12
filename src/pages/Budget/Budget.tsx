@@ -3,7 +3,7 @@ import Header from "../../components/Header/Header";
 import BudgetView from "../../features/budgetView/BudgetView/BudgetView";
 
 const Budget = () => {
-  const budgetId = Number(useParams().id);
+  const budgetId = useParams().id;
   
   return (<>
     <Header />

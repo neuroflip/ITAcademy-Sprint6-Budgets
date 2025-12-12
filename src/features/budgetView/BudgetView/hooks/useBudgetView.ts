@@ -4,7 +4,7 @@ import LocalStorageProvider from "../../../../BudgetDataManager/providers/LocalS
 import type { BudgetData } from "../../../../BudgetDataManager/BudgetDataManager.types";
 
 
-const useBudgetView = (id: number): [ BudgetData | null, boolean ] => {
+const useBudgetView = (id: string): [ BudgetData | null, boolean ] => {
   const dataManager = React.useMemo(() => new BudgetDataManager(new LocalStorageProvider()), []);
   const [ budgetData, setBudgetData ] = React.useState<BudgetData | null>(null);
   const [ isLoaded, setIsLoaded ] = React.useState(false);

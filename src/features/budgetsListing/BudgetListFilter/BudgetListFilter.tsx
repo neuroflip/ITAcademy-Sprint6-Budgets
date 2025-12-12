@@ -12,9 +12,10 @@ const BudgetListFilter = ({ onFilterChange }: BudgetListFilterProps) => {
     onFilterChange(value);
   }
 
-  return <div className="flex-1 text-left">
+  return <label className="flex-1 text-left">
+    Search:
     <input id="filter" className="budgetList__filter" onChange={ onFilterChangeHandler } type="text" value={ filter } />
-  </div>
+  </label>
 }
 
 export default BudgetListFilter;

@@ -7,7 +7,7 @@ interface BudgetService {
 }
 
 type BudgetData = {
-  id?: number,
+  id?: string,
   date: string,
   name: string,
   telephone: string,
@@ -18,7 +18,7 @@ type BudgetData = {
 
 interface BudgetDataProvider {
   getBudgets: () => Array<BudgetData>,
-  getBudget: (id: number) => BudgetData,
+  getBudget: (id: string) => BudgetData,
   saveBudget: (data: BudgetData) => void
 }
 

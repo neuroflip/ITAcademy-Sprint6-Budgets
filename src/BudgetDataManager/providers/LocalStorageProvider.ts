@@ -1,9 +1,10 @@
 import type { BudgetData, BudgetDataProvider } from "../BudgetDataManager.types";
+import {v4 as uuidv4} from 'uuid';
 
 const LOCALSTORAGEKEY = 'budgets';
 
 const getDataUID = () => {
-  return Date.now();
+  return uuidv4();
 }
 
 class LocalStorageProvider implements BudgetDataProvider {
@@ -16,7 +17,7 @@ class LocalStorageProvider implements BudgetDataProvider {
     }
   }
 
-  getBudget(id:number) {
+  getBudget(id: string) {
     const dataArray =  this.getBudgets();
     const data = dataArray.find((element: BudgetData) => element.id === id)
     

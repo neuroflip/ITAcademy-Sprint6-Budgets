@@ -24,7 +24,7 @@ const newBudget = {
     ]
   }],
   "totalCost": 240,
-  "id": 1234
+  "id": "1234"
 };
 
 const orderFunc = (order: OrderIndex) => (a:BudgetData, b:BudgetData) => {

@@ -11,10 +11,10 @@ const BudgetsManager = () => {
     return  (<div className="mt-10">
         <label className="leading-8 sm:text-base text-sm">
             Monthly
-            <label className="switch mx-5">
+            <div className="switch mx-5">
                 <input id="annualSwitch" type="checkbox" onChange= { onSwitch } checked={ isSwitchOn } />
                 <span className="slider round"></span>
-            </label>
+            </div>
             Annual payment
         </label>
         <BudgetServiceList budgetServices={ budgetServices }
