@@ -20,7 +20,7 @@ describe('BudgetDataManager', () => {
 
     it('returns a budgets calling getBudget', () => {
       const dataManager = new BudgetDataManager(MemoryMockProvider);
-      const returnedData = dataManager.getBudget(1234);
+      const returnedData = dataManager.getBudget("1234");
 
       expect(returnedData).toStrictEqual(budgetsData[0]);
     });

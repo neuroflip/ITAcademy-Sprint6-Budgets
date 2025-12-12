@@ -2,7 +2,7 @@
 
 @layer base {
   .budgetList__filter {
-    @apply max-w-35 sm:max-w-max border border-gray-500 rounded p-2 bg-size-[15%] bg-no-repeat bg-right;
+    @apply sm:ml-3 max-w-35 sm:max-w-max border border-gray-500 rounded p-2 bg-size-[15%] bg-no-repeat bg-right;
     @apply bg-[url('./src/features/budgetsListing/BudgetListFilter/assets/images/magnifyingGlass.png')];
   }
 }

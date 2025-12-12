@@ -7,12 +7,12 @@ const ModalInfo = ({ message, isOpen, onClose }: ModalInfoProps) => {
     onClose();
   }
 
-  return <div data-testid="modalContainer" className={ `modal ${isOpen ? 'block' : 'hidden'}` }>
+  return <dialog data-testid="modalContainer" className={ `modal ${isOpen ? 'block' : 'hidden'}` }>
     <div className="modalContent">
       <p>{ message }</p>
       <span className="close" onClick={ onCloseHandler } aria-label="Close button">X</span>
     </div>
-  </div>
+  </dialog>
 }
 
 export default ModalInfo;

@@ -1,0 +1,19 @@
+@reference "tailwindcss";
+
+@layer base {
+  .landingCard {
+    @apply bg-gray-200 rounded-2xl p-8 shadow-xl;
+  }
+  
+  .landing__icon {
+    @apply text-4xl mb-4;
+  }
+
+  .landing__title {
+    @apply text-black text-xl font-semibold mb-2
+  }
+
+  .landing__text {
+    @apply text-black font-bold;
+  }
+}

@@ -1,5 +1,5 @@
 type ClipboardCopySharerProps = {
-  id: number
+  id: string
 }
 
 export type { ClipboardCopySharerProps };

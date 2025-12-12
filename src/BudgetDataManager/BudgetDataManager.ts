@@ -7,7 +7,7 @@ class BudgetDataManager {
     this.provider = provider;
   }
 
-  getBudget(id: number) {
+  getBudget(id: string) {
     return this.provider.getBudget(id);
   }
 
